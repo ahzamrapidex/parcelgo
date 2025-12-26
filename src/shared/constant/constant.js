@@ -536,67 +536,56 @@ export const faqsHome = [
   },
 ];
 
-// Add to src/shared/constant/constant.js
 export const testimonialsData = [
   {
     id: 1,
     name: "Taylor Jay",
     role: "Founder & CEO",
-    company: "RVE RETAIL",
-    avatar: "/avatars/1.png", // You'll need to add actual images
+    avatar: "/avatars/1.png",
     rating: 5,
     review:
       "Love the design and customization of ParcelGo 👍. We have used various shipping services for our business in the past but they would always mess up our orders or charge hidden fees. ParcelGo has been reliable and transparent with pricing.",
     verified: true,
-    companyLogo: "/logos/rve-retail.svg",
   },
   {
     id: 2,
     name: "Garrett Kite",
     role: "Business Strategist",
-    company: "KITE MEDIA",
     avatar: "/avatars/2.png",
     rating: 5,
     review:
       "I have used ParcelGo's shipping service for a couple years and have nothing but good things to say about it. I like the flexibility and amount of courier options available. The tracking system is excellent.",
     verified: true,
-    companyLogo: "/logos/kite-media.svg",
   },
   {
     id: 3,
     name: "Marion Campbell",
     role: "Entrepreneur",
-    company: "iZettle",
     avatar: "/avatars/3.png",
     rating: 5,
     review:
       "A very well done service that now works exactly as advertised. Leaps and bounds above any other shipping service I've ever worked with 🤩✨",
     verified: true,
-    companyLogo: "/logos/izettle.svg",
   },
   {
     id: 4,
     name: "Sarah Johnson",
     role: "E-commerce Manager",
-    company: "BLOOM BOUTIQUE",
     avatar: "/avatars/4.png",
     rating: 5,
     review:
       "ParcelGo has transformed our shipping process. The integration with our online store is seamless, and our customers love the tracking updates. We've saved 30% on shipping costs since switching.",
     verified: true,
-    companyLogo: "/logos/bloom-boutique.svg",
   },
   {
     id: 5,
     name: "David Chen",
     role: "Operations Director",
-    company: "TECH SOLUTIONS",
     avatar: "/avatars/5.png",
     rating: 5,
     review:
       "Outstanding service! ParcelGo handles all our B2B shipments efficiently. The bulk shipping discounts and dedicated account manager have made a huge difference to our bottom line.",
     verified: true,
-    companyLogo: "/logos/tech-solutions.svg",
   },
 ];
 

@@ -1,4 +1,4 @@
-// Create a new file: src/shared/components/testimonials/Testimonials.jsx
+// Update src/shared/components/testimonials/Testimonials.jsx
 "use client";
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -12,9 +12,7 @@ import {
   Stack,
   Rating,
   IconButton,
-  Chip,
 } from '@mui/material';
-import Image from 'next/image';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import VerifiedIcon from '@mui/icons-material/Verified';
@@ -89,7 +87,7 @@ const Testimonials = ({ testimonials }) => {
                       borderRadius: 3,
                       backgroundColor: 'white',
                       border: '1px solid #E5E7EB',
-                      height: '100%',
+                      height: '180px', // Fixed height for all cards
                       display: 'flex',
                       flexDirection: 'column',
                       position: 'relative',
@@ -114,7 +112,7 @@ const Testimonials = ({ testimonials }) => {
                       />
                     </Box>
 
-                    {/* Review Text */}
+                    {/* Review Text - Takes up available space */}
                     <Typography
                       variant="body1"
                       sx={{
@@ -123,29 +121,18 @@ const Testimonials = ({ testimonials }) => {
                         color: 'text.secondary',
                         fontSize: '1rem',
                         fontStyle: 'italic',
-                        flex: 1,
+                        flex: 1, // Takes up available space
+                        overflow: 'hidden',
+                        display: '-webkit-box',
+                        WebkitLineClamp: 6, // Limits to 6 lines
+                        WebkitBoxOrient: 'vertical',
                       }}
                     >
                       "{testimonial.review}"
                     </Typography>
 
-                    {/* Read More Link */}
-                    <Typography
-                      variant="body2"
-                      sx={{
-                        color: '#6B7280',
-                        cursor: 'pointer',
-                        mb: 3,
-                        '&:hover': {
-                          textDecoration: 'underline',
-                        },
-                      }}
-                    >
-                      Read more
-                    </Typography>
-
-                    {/* User Info */}
-                    <Stack direction="row" spacing={2} alignItems="center">
+                    {/* User Info - Fixed at bottom */}
+                    <Stack direction="row" spacing={2} alignItems="center" sx={{ mt: 'auto' }}>
                       <Avatar
                         src={testimonial.avatar}
                         alt={testimonial.name}
@@ -185,33 +172,6 @@ const Testimonials = ({ testimonials }) => {
                         >
                           {testimonial.role}
                         </Typography>
-                        {testimonial.companyLogo ? (
-                          <Box sx={{ mt: 1, maxWidth: '120px' }}>
-                            <Image
-                              src={testimonial.companyLogo}
-                              alt={testimonial.company}
-                              width={120}
-                              height={30}
-                              style={{
-                                objectFit: 'contain',
-                                opacity: 0.7,
-                              }}
-                            />
-                          </Box>
-                        ) : (
-                          <Typography
-                            variant="body2"
-                            sx={{
-                              color: 'text.disabled',
-                              fontSize: '0.875rem',
-                              fontWeight: 500,
-                              textTransform: 'uppercase',
-                              letterSpacing: '0.5px',
-                            }}
-                          >
-                            {testimonial.company}
-                          </Typography>
-                        )}
                       </Stack>
                     </Stack>
                   </Paper>
