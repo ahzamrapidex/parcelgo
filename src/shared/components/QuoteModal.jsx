@@ -1,5 +1,6 @@
-'use client';
-import React from 'react';
+"use client";
+
+import React from "react";
 import {
   Dialog,
   DialogContent,
@@ -9,33 +10,49 @@ import {
   Divider,
   IconButton,
   Box,
-} from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close';
-import UIButton from '@/shared/pure-components/button/button';
+} from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
+import UIButton from "@/shared/pure-components/button/button";
 
-const QuoteModal = ({ open, onClose, quoteData }) => {
+const QuoteModal = ({ open, onClose, quoteData, whatsappNumber }) => {
+  const sendFrom = quoteData?.sendFrom || "Pakistan";
+
+  // sendTo is now an option object; fallback safe
+  const sendTo =
+    quoteData?.sendTo?.label ||
+    quoteData?.sendTo?.value ||
+    "";
+
+  const length = quoteData?.length ?? "";
+  const width = quoteData?.width ?? "";
+  const height = quoteData?.height ?? "";
+  const weight = quoteData?.weight ?? "";
+
   const handleSendWhatsApp = () => {
-    const { sendFrom, sendTo, length, width, height, weight } = quoteData;
-    
+    // basic guard (should already be valid)
+    if (!sendTo || !length || !width || !height || !weight) return;
+
     const message = `Hello! I would like to get a quote for shipping a parcel.
 
-*Shipping Details:*
+Shipping Details:
 From: ${sendFrom}
 To: ${sendTo}
-Length: ${length}cm
-Width: ${width}cm
-Height: ${height}cm
-Weight: ${weight}kg
+Dimensions: ${length} x ${width} x ${height} cm
+Weight: ${weight} kg
 
-Please provide me with the shipping rates and delivery options.
-
+Please share rates and available delivery options.
 Thank you!`;
 
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappURL = `https://wa.me/447466005024?text=${encodedMessage}`;
-    
-    window.open(whatsappURL, '_blank');
-    onClose(); // Close modal after opening WhatsApp
+    const encoded = encodeURIComponent(message);
+
+    // WhatsApp requires international format WITHOUT +, spaces, dashes.
+    // If your number is not in correct format, link may fail.
+    const number = String(whatsappNumber || "").replace(/[^\d]/g, "");
+
+    const url = `https://wa.me/${number}?text=${encoded}`;
+
+    window.open(url, "_blank", "noopener,noreferrer");
+    onClose();
   };
 
   return (
@@ -51,51 +68,48 @@ Thank you!`;
         },
       }}
     >
-      <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', pb: 2 }}>
+      <DialogTitle
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          pb: 2,
+        }}
+      >
         <Typography variant="h5" fontWeight="bold" color="primary">
           Shipping Quote Request
         </Typography>
-        <IconButton onClick={onClose} size="small">
+        <IconButton onClick={onClose} size="small" aria-label="Close">
           <CloseIcon />
         </IconButton>
       </DialogTitle>
-      
+
       <DialogContent>
         <Stack spacing={3}>
           <Typography variant="body1" color="text.secondary">
-            Your shipping details are ready. Click the button below to send a WhatsApp message to get your personalized quote.
+            Click the button below to open WhatsApp with a pre-filled message.
           </Typography>
-          
+
           <Divider />
-          
+
           <Box>
             <Typography variant="h6" fontWeight="bold" gutterBottom color="primary">
-              Shipping Details:
+              Shipping Details
             </Typography>
+
             <Stack spacing={1}>
-              <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                <Typography variant="body1" fontWeight="500">From:</Typography>
-                <Typography variant="body1">{quoteData.sendFrom || 'Pakistan'}</Typography>
-              </Box>
-              <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                <Typography variant="body1" fontWeight="500">To:</Typography>
-                <Typography variant="body1">{quoteData.sendTo}</Typography>
-              </Box>
-              <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                <Typography variant="body1" fontWeight="500">Dimensions:</Typography>
-                <Typography variant="body1">
-                  {quoteData.length} × {quoteData.width} × {quoteData.height} cm
-                </Typography>
-              </Box>
-              <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                <Typography variant="body1" fontWeight="500">Weight:</Typography>
-                <Typography variant="body1">{quoteData.weight} kg</Typography>
-              </Box>
+              <Row label="From" value={sendFrom} />
+              <Row label="To" value={sendTo || "-"} />
+              <Row
+                label="Dimensions"
+                value={`${length || "-"} × ${width || "-"} × ${height || "-"} cm`}
+              />
+              <Row label="Weight" value={`${weight || "-"} kg`} />
             </Stack>
           </Box>
-          
+
           <Divider />
-          
+
           <Stack spacing={2}>
             <UIButton
               variant="contained"
@@ -103,20 +117,18 @@ Thank you!`;
               fullWidth
               onClick={handleSendWhatsApp}
               sx={{
-                backgroundColor: '#25D366',
-                color: 'white',
-                fontWeight: 'bold',
+                backgroundColor: "#25D366",
+                color: "white",
+                fontWeight: "bold",
                 py: 1.5,
-                '&:hover': {
-                  backgroundColor: '#20B954',
-                },
+                "&:hover": { backgroundColor: "#20B954" },
               }}
             >
               📱 Send WhatsApp Message
             </UIButton>
-            
+
             <Typography variant="caption" color="text.secondary" textAlign="center">
-              This will open WhatsApp with a pre-filled message containing your shipping details.
+              This opens WhatsApp with your details already filled in.
             </Typography>
           </Stack>
         </Stack>
@@ -124,5 +136,16 @@ Thank you!`;
     </Dialog>
   );
 };
+
+const Row = ({ label, value }) => (
+  <Box sx={{ display: "flex", justifyContent: "space-between", gap: 2 }}>
+    <Typography variant="body1" fontWeight="600">
+      {label}:
+    </Typography>
+    <Typography variant="body1" sx={{ textAlign: "right" }}>
+      {value}
+    </Typography>
+  </Box>
+);
 
 export default QuoteModal;

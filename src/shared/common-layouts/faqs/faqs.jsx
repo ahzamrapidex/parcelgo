@@ -45,7 +45,7 @@ const Faqs = ({ faqa }) => {
             <Grid container spacing={3} sx={{}}>
               {faqa.map((item, index) => {
                 return (
-                  <Grid item xs={12} md={4}>
+                  <Grid item xs={12} md={4} key={index}>
                     <Card
                       key={item.id}
                       sx={{

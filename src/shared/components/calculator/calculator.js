@@ -1,73 +1,72 @@
 "use client";
-import { AllCountries, SendToCountries } from "@/shared/constant/constant";
-import InputField from "@/shared/form-control/InputField";
+
+import * as React from "react";
+import { Box, Stack, Typography, useMediaQuery } from "@mui/material";
+
+import { SendToCountries } from "@/shared/constant/constant";
 import UiAutoComplete from "@/shared/components/UiAutoComplete";
-import theme from "@/shared/hoc/theme/theme";
+import InputField from "@/shared/form-control/InputField";
 import UIButton from "@/shared/pure-components/button/button";
 import QuoteModal from "@/shared/components/QuoteModal";
-import {
-  Stack,
-  Typography,
-  useMediaQuery,
-  Alert,
-} from "@mui/material";
-import Box from "@mui/material/Box";
-import * as React from "react";
+import theme from "@/shared/hoc/theme/theme";
 
 export default function Calculator() {
-  const [formData, setFormData] = React.useState({
-    sendFrom: 'Pakistan',
-    sendTo: '',
-    length: '',
-    width: '',
-    height: '',
-    weight: ''
-  });
-  const [modalOpen, setModalOpen] = React.useState(false);
-  const [errors, setErrors] = React.useState({});
-  
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-  const handleInputChange = (field, value) => {
-    setFormData(prev => ({
-      ...prev,
-      [field]: value
-    }));
-    
-    // Clear error when user starts typing
-    if (errors[field]) {
-      setErrors(prev => ({
-        ...prev,
-        [field]: ''
-      }));
-    }
+  // Store numbers as numbers, sendTo as an option object (not string)
+  const [formData, setFormData] = React.useState({
+    sendFrom: "Pakistan",
+    sendTo: null, // { label, value, ... } from your options
+    length: "",
+    width: "",
+    height: "",
+    weight: "",
+  });
+
+  const [errors, setErrors] = React.useState({});
+  const [modalOpen, setModalOpen] = React.useState(false);
+
+  const setField = (name, value) => {
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
-  const validateForm = () => {
-    const newErrors = {};
-    
-    if (!formData.sendTo) {
-      newErrors.sendTo = 'Please select destination country';
+  const setNumberField = (name, raw) => {
+    // raw from input is string
+    if (raw === "" || raw === null || raw === undefined) {
+      setField(name, "");
+      return;
     }
-    if (!formData.length || formData.length <= 0) {
-      newErrors.length = 'Please enter valid length';
+    const n = Number(raw);
+    setField(name, Number.isFinite(n) ? n : "");
+  };
+
+  const validate = () => {
+    const e = {};
+
+    if (!formData.sendTo) e.sendTo = "Please select destination country";
+
+    const numericRules = [
+      ["length", "Please enter valid length"],
+      ["width", "Please enter valid width"],
+      ["height", "Please enter valid height"],
+      ["weight", "Please enter valid weight"],
+    ];
+
+    for (const [key, msg] of numericRules) {
+      const v = formData[key];
+      if (v === "" || v === null || v === undefined || Number(v) <= 0) {
+        e[key] = msg;
+      }
     }
-    if (!formData.width || formData.width <= 0) {
-      newErrors.width = 'Please enter valid width';
-    }
-    if (!formData.height || formData.height <= 0) {
-      newErrors.height = 'Please enter valid height';
-    }
-    if (!formData.weight || formData.weight <= 0) {
-      newErrors.weight = 'Please enter valid weight';
-    }
-    
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+
+    setErrors(e);
+    return Object.keys(e).length === 0;
   };
 
   const handleGetQuote = () => {
-    if (validateForm()) {
+    console.log("HERER===>>>");
+    if (validate()){ 
       setModalOpen(true);
     }
   };
@@ -75,13 +74,14 @@ export default function Calculator() {
   return (
     <Box sx={{ borderRadius: 2, overflow: "hidden", mx: "auto", mt: 2 }}>
       {/* Header */}
-      <Box 
-        sx={{ 
-          background: "linear-gradient(135deg,rgb(28, 129, 31) 0%,rgb(28, 129, 31) 100%)",
+      <Box
+        sx={{
+          background:
+            "linear-gradient(135deg, rgb(28,129,31) 0%, rgb(28,129,31) 100%)",
           color: "white",
           py: 2,
           px: 3,
-          textAlign: "center"
+          textAlign: "center",
         }}
       >
         <Typography variant="h6" fontWeight="bold">
@@ -89,25 +89,29 @@ export default function Calculator() {
         </Typography>
       </Box>
 
-      {/* Form Content */}
+      {/* Form */}
       <Box sx={{ p: 3, backgroundColor: "background.lightBlue" }}>
         <Stack spacing={3}>
           <Stack direction={{ xs: "column", md: "row" }} spacing={2}>
-            {/* Send From - Fixed to Pakistan */}
+            {/* Send From */}
             <Box sx={{ flex: 1 }}>
-              <Typography variant="body2" fontWeight="600" sx={{ mb: 1, color: 'text.primary' }}>
+              <Typography
+                variant="body2"
+                fontWeight="600"
+                sx={{ mb: 1, color: "text.primary" }}
+              >
                 Send From
               </Typography>
               <Box
                 sx={{
                   p: 2,
-                  backgroundColor: '#f5f5f5',
+                  backgroundColor: "#f5f5f5",
                   borderRadius: 1,
-                  border: '1px solid #ddd',
-                  color: 'text.secondary',
-                  minHeight: '56px',
-                  display: 'flex',
-                  alignItems: 'center'
+                  border: "1px solid #ddd",
+                  color: "text.secondary",
+                  minHeight: "56px",
+                  display: "flex",
+                  alignItems: "center",
                 }}
               >
                 <Typography variant="body1" fontWeight="500">
@@ -116,100 +120,112 @@ export default function Calculator() {
               </Box>
             </Box>
 
-            {/* Send To - Searchable dropdown */}
+            {/* Send To */}
             <Box sx={{ flex: 1 }}>
-              <Typography variant="body2" fontWeight="600" sx={{ mb: 1, color: 'text.primary' }}>
+              <Typography
+                variant="body2"
+                fontWeight="600"
+                sx={{ mb: 1, color: "text.primary" }}
+              >
                 Send To *
               </Typography>
+
               <UiAutoComplete
                 name="sendTo"
                 placeholder="Select destination country"
                 opt={SendToCountries}
-                optionRenderKeys={{ label: 'label', value: 'value' }}
+                optionRenderKeys={{ label: "label", value: "value" }}
                 variant="outlined"
                 size={isMobile ? "small" : "medium"}
-                onChange={(event, value) => handleInputChange('sendTo', value?.label || '')}
+                value={formData.sendTo} // IMPORTANT: controlled value
+                onChange={(event, option) => setField("sendTo", option || null)}
                 error={Boolean(errors.sendTo)}
                 helperText={errors.sendTo}
-                sx={{ 
-                  backgroundColor: 'white',
-                  '& .MuiInputBase-root': {
-                    minHeight: '56px'
-                  }
+                sx={{
+                  backgroundColor: "white",
+                  "& .MuiInputBase-root": { minHeight: "56px" },
                 }}
               />
             </Box>
           </Stack>
 
-          <Stack direction={{ xs: "column", md: "row" }} spacing={2}>
-            {/* Dimensions */}
-            <Box sx={{ flex: 1 }}>
-              <Typography variant="body2" fontWeight="600" sx={{ mb: 1, color: 'text.primary' }}>
-                Dimensions (cm) *
-              </Typography>
-              <Stack direction="row" spacing={1}>
-                <InputField
-                  label="Length *"
-                  type="number"
-                  placeholder="L"
-                  value={formData.length}
-                  onChange={(e) => handleInputChange('length', e.target.value)}
-                  error={Boolean(errors.length)}
-                  helperText={errors.length}
-                  sx={{ backgroundColor: "white" }}
-                  size={isMobile ? "small" : "medium"}
-                />
-                <InputField
-                  label="Width *"
-                  type="number"
-                  placeholder="W"
-                  value={formData.width}
-                  onChange={(e) => handleInputChange('width', e.target.value)}
-                  error={Boolean(errors.width)}
-                  helperText={errors.width}
-                  sx={{ backgroundColor: "white" }}
-                  size={isMobile ? "small" : "medium"}
-                />
-                <InputField
-                  label="Height *"
-                  type="number"
-                  placeholder="H"
-                  value={formData.height}
-                  onChange={(e) => handleInputChange('height', e.target.value)}
-                  error={Boolean(errors.height)}
-                  helperText={errors.height}
-                  sx={{ backgroundColor: "white" }}
-                  size={isMobile ? "small" : "medium"}
-                />
-                <InputField
-                label="Weight *"
+          {/* Dimensions + Weight */}
+          <Box>
+            <Typography
+              variant="body2"
+              fontWeight="600"
+              sx={{ mb: 1, color: "text.primary" }}
+            >
+              Dimensions (cm) & Weight *
+            </Typography>
+
+            <Stack direction={{ xs: "column", sm: "row" }} spacing={1}>
+              <InputField
+                label="Length *"
+                type="number"
+                placeholder="L"
+                value={formData.length}
+                onChange={(e) => setNumberField("length", e.target.value)}
+                error={Boolean(errors.length)}
+                helperText={errors.length}
+                sx={{ backgroundColor: "white", flex: 1 }}
+                size={isMobile ? "small" : "medium"}
+                inputProps={{ min: 0 }}
+              />
+
+              <InputField
+                label="Width *"
+                type="number"
+                placeholder="W"
+                value={formData.width}
+                onChange={(e) => setNumberField("width", e.target.value)}
+                error={Boolean(errors.width)}
+                helperText={errors.width}
+                sx={{ backgroundColor: "white", flex: 1 }}
+                size={isMobile ? "small" : "medium"}
+                inputProps={{ min: 0 }}
+              />
+
+              <InputField
+                label="Height *"
+                type="number"
+                placeholder="H"
+                value={formData.height}
+                onChange={(e) => setNumberField("height", e.target.value)}
+                error={Boolean(errors.height)}
+                helperText={errors.height}
+                sx={{ backgroundColor: "white", flex: 1 }}
+                size={isMobile ? "small" : "medium"}
+                inputProps={{ min: 0 }}
+              />
+
+              <InputField
+                label="Weight (kg) *"
                 type="number"
                 placeholder="Weight"
                 value={formData.weight}
-                onChange={(e) => handleInputChange('weight', e.target.value)}
+                onChange={(e) => setNumberField("weight", e.target.value)}
                 error={Boolean(errors.weight)}
                 helperText={errors.weight}
-                sx={{ backgroundColor: "white" }}
+                sx={{ backgroundColor: "white", flex: 1 }}
                 size={isMobile ? "small" : "medium"}
+                inputProps={{ min: 0 }}
               />
-              </Stack>
-            </Box>
-          </Stack>
+            </Stack>
+          </Box>
 
-          {/* Get Quote Button */}
-          <Box sx={{ mt: 3, textAlign: 'center' }}>
+          {/* Button */}
+          <Box sx={{ mt: 3, textAlign: "center" }}>
             <UIButton
               variant="contained"
-              onClick={handleGetQuote}
+              callback={handleGetQuote}
               sx={{
-                minWidth: { xs: "100%", md: 200 },
+                minWidth: { xs: "100%", md: 260 },
                 minHeight: 56,
                 backgroundColor: "rgb(28, 129, 31)",
                 fontSize: "1.1rem",
                 fontWeight: "bold",
-                "&:hover": {
-                  backgroundColor: "success.dark",
-                },
+                "&:hover": { backgroundColor: "success.dark" },
               }}
             >
               Get Quote via WhatsApp
@@ -218,11 +234,12 @@ export default function Calculator() {
         </Stack>
       </Box>
 
-      {/* Quote Modal */}
+      {/* Modal */}
       <QuoteModal
         open={modalOpen}
         onClose={() => setModalOpen(false)}
         quoteData={formData}
+        whatsappNumber="16885014"
       />
     </Box>
   );
