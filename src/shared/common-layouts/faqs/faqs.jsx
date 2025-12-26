@@ -1,112 +1,178 @@
 "use client";
 import React, { useState } from "react";
-import { Box, Container, Grid, Stack, Typography, Card } from "@mui/material";
-import UIButton from "@/shared/pure-components/button/button";
-import FaqDrawer from "./faqs-drawer";
+import { 
+  Box, 
+  Container, 
+  Stack, 
+  Typography, 
+  Collapse,
+  IconButton,
+  Divider,
+} from "@mui/material";
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 
 const Faqs = ({ faqa }) => {
-  const [drawerOpen, setDrawerOpen] = useState({
-    selected: null,
-    open: false,
-  });
+  const [expandedItems, setExpandedItems] = useState(new Set());
 
-  const handleShowAnswer = (item) => {
-    setDrawerOpen({
-      selected: item,
-      open: true,
+  const handleToggle = (itemId) => {
+    setExpandedItems(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(itemId)) {
+        newSet.delete(itemId);
+      } else {
+        newSet.add(itemId);
+      }
+      return newSet;
     });
   };
 
-  const handleCloseDrawer = () => {
-    setDrawerOpen({
-      selected: null,
-      open: false,
-    });
-  };
+  const isExpanded = (itemId) => expandedItems.has(itemId);
 
   return (
-    <>
-      <Container maxWidth="xl" sx={{ py: 4 }}>
-        <Stack textAlign={"center"} spacing={8} alignItems={"center"}>
-          <Typography
-            variant="h3"
-            sx={{
-              fontWeight: "bold",
-              mb: 3,
-              lineHeight: 1.1,
-              color: "text.primary",
-            }}
-          >
-            Frequently Asked Questions
-          </Typography>
+    <Container maxWidth="xl" sx={{ py: 8 }}>
+      <Stack spacing={6} alignItems="center">
+        {/* Header */}
+        <Typography
+          variant="h3"
+          sx={{
+            fontWeight: "bold",
+            textAlign: "center",
+            lineHeight: 1.2,
+            color: "text.primary",
+            mb: 2,
+          }}
+        >
+          Frequently Asked Questions
+        </Typography>
 
-          {/* FAQ Grid */}
-          <Box sx={{ width: "100%", maxWidth: "1200px" }}>
-            <Grid container spacing={3} sx={{}}>
-              {faqa.map((item, index) => {
-                return (
-                  <Grid item xs={12} md={4} key={index}>
-                    <Card
-                      key={item.id}
+        {/* FAQ Accordion */}
+        <Box sx={{ width: "100%", maxWidth: "900px" }}>
+          <Stack spacing={2}>
+            {faqa.map((item, index) => {
+              const expanded = isExpanded(item.id || index);
+              
+              return (
+                <Box
+                  key={item.id || index}
+                  sx={{
+                    borderRadius: 3,
+                    border: "1px solid #e0e0e0",
+                    backgroundColor: "white",
+                    overflow: "hidden",
+                    transition: "all 0.3s ease",
+                    "&:hover": {
+                      boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                      borderColor: "primary.main",
+                    },
+                    ...(expanded && {
+                      boxShadow: "0 8px 24px rgba(0,0,0,0.12)",
+                      borderColor: "primary.main",
+                    }),
+                  }}
+                >
+                  {/* Question Header */}
+                  <Box
+                    onClick={() => handleToggle(item.id || index)}
+                    sx={{
+                      p: 3,
+                      cursor: "pointer",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      transition: "background-color 0.2s ease",
+                      "&:hover": {
+                        backgroundColor: "action.hover",
+                      },
+                      ...(expanded && {
+                        backgroundColor: "primary.light",
+                        color: "primary.contrastText",
+                      }),
+                    }}
+                  >
+                    <Typography
+                      variant="h6"
                       sx={{
-                        height: "200px",
-                        borderRadius: 3,
-                        border: "1px solid #e0e0e0",
-                        background: "white",
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "space-between",
-                        p: 3,
+                        fontWeight: 600,
+                        lineHeight: 1.3,
+                        pr: 2,
+                      }}
+                    >
+                      {item.question}
+                    </Typography>
+                    
+                    <IconButton
+                      sx={{
+                        transition: "transform 0.3s ease, color 0.2s ease",
+                        transform: expanded ? "rotate(180deg)" : "rotate(0deg)",
+                        color: expanded ? "primary.contrastText" : "text.secondary",
                         "&:hover": {
-                          boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-                          transform: "translateY(-2px)",
-                          transition: "all 0.3s ease",
+                          backgroundColor: "transparent",
                         },
                       }}
                     >
-                      <Typography
-                        variant="h6"
-                        sx={{
-                          fontWeight: 600,
-                          color: "text.primary",
-                          mb: 2,
-                          textAlign: "left",
-                        }}
-                      >
-                        {item.question}
-                      </Typography>
-                      <UIButton
-                        variant="outlined"
-                        size="large"
-                        callback={() => handleShowAnswer(item)}
-                        sx={{
-                          fontWeight: 600,
-                          fontSize: "1.2rem",
-                          border: "none",
-                          p: 0,
-                          textTransform: "none",
-                          justifyContent: "flex-start",
-                          alignSelf: "flex-start",
-                        }}
-                        endIcon={<Box sx={{ ml: 1 }}>→</Box>}
-                      >
-                        Show answer
-                      </UIButton>
-                    </Card>
-                  </Grid>
-                );
-              })}
-            </Grid>
-          </Box>
-        </Stack>
+                      <ExpandMoreIcon />
+                    </IconButton>
+                  </Box>
 
-        <FaqDrawer
-          open={drawerOpen.open}
-          onClose={() => handleCloseDrawer()}
-          selected={drawerOpen.selected}
-        />
-      </Container>
-    </>
+                  {/* Answer Content */}
+                  <Collapse 
+                    in={expanded} 
+                    timeout={400}
+                    sx={{
+                      "& .MuiCollapse-wrapper": {
+                        transition: "height 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                      },
+                    }}
+                  >
+                    <Box>
+                      <Divider />
+                      <Box sx={{ p: 3, pt: 2 }}>
+                        <Typography
+                          variant="body1"
+                          sx={{
+                            lineHeight: 1.6,
+                            color: "text.secondary",
+                            fontSize: "1rem",
+                          }}
+                        >
+                          {item.answer}
+                        </Typography>
+                      </Box>
+                    </Box>
+                  </Collapse>
+                </Box>
+              );
+            })}
+          </Stack>
+        </Box>
+
+        {/* Expand/Collapse All Button */}
+        <Box sx={{ mt: 4 }}>
+          <Typography
+            variant="button"
+            onClick={() => {
+              if (expandedItems.size === faqa.length) {
+                setExpandedItems(new Set());
+              } else {
+                setExpandedItems(new Set(faqa.map((item, index) => item.id || index)));
+              }
+            }}
+            sx={{
+              cursor: "pointer",
+              textDecoration: "underline",
+              color: "primary.main",
+              fontWeight: 600,
+              "&:hover": {
+                color: "primary.dark",
+              },
+            }}
+          >
+            {expandedItems.size === faqa.length ? "Collapse All" : "Expand All"}
+          </Typography>
+        </Box>
+      </Stack>
+    </Container>
   );
 };
 
