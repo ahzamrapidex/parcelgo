@@ -91,11 +91,11 @@ export default function Calculator() {
 
       {/* Form Content */}
       <Box sx={{ p: 3, backgroundColor: "background.lightBlue" }}>
-        <Stack spacing={2}>
+        <Stack spacing={3}>
           <Stack direction={{ xs: "column", md: "row" }} spacing={2}>
             {/* Send From - Fixed to Pakistan */}
             <Box sx={{ flex: 1 }}>
-              <Typography variant="body2" fontWeight="500" sx={{ mb: 1 }}>
+              <Typography variant="body2" fontWeight="600" sx={{ mb: 1, color: 'text.primary' }}>
                 Send From
               </Typography>
               <Box
@@ -104,7 +104,10 @@ export default function Calculator() {
                   backgroundColor: '#f5f5f5',
                   borderRadius: 1,
                   border: '1px solid #ddd',
-                  color: 'text.secondary'
+                  color: 'text.secondary',
+                  minHeight: '56px',
+                  display: 'flex',
+                  alignItems: 'center'
                 }}
               >
                 <Typography variant="body1" fontWeight="500">
@@ -115,9 +118,12 @@ export default function Calculator() {
 
             {/* Send To - Searchable dropdown */}
             <Box sx={{ flex: 1 }}>
+              <Typography variant="body2" fontWeight="600" sx={{ mb: 1, color: 'text.primary' }}>
+                Send To *
+              </Typography>
               <UiAutoComplete
                 name="sendTo"
-                label="Send To *"
+                placeholder="Select destination country"
                 opt={SendToCountries}
                 optionRenderKeys={{ label: 'label', value: 'value' }}
                 variant="outlined"
@@ -125,7 +131,12 @@ export default function Calculator() {
                 onChange={(event, value) => handleInputChange('sendTo', value?.label || '')}
                 error={Boolean(errors.sendTo)}
                 helperText={errors.sendTo}
-                sx={{ backgroundColor: 'white' }}
+                sx={{ 
+                  backgroundColor: 'white',
+                  '& .MuiInputBase-root': {
+                    minHeight: '56px'
+                  }
+                }}
               />
             </Box>
           </Stack>
@@ -133,8 +144,8 @@ export default function Calculator() {
           <Stack direction={{ xs: "column", md: "row" }} spacing={2}>
             {/* Dimensions */}
             <Box sx={{ flex: 1 }}>
-              <Typography variant="body2" fontWeight="500" sx={{ mb: 1 }}>
-                Dimensions (cm)
+              <Typography variant="body2" fontWeight="600" sx={{ mb: 1, color: 'text.primary' }}>
+                Dimensions (cm) *
               </Typography>
               <Stack direction="row" spacing={1}>
                 <InputField
@@ -175,8 +186,11 @@ export default function Calculator() {
 
             {/* Weight */}
             <Box sx={{ flex: 0.5 }}>
+              <Typography variant="body2" fontWeight="600" sx={{ mb: 1, color: 'text.primary' }}>
+                Weight (kg) *
+              </Typography>
               <InputField
-                label="Weight (kg) *"
+                label="Weight *"
                 type="number"
                 placeholder="Weight"
                 value={formData.weight}
@@ -188,11 +202,6 @@ export default function Calculator() {
               />
             </Box>
           </Stack>
-
-          {/* Info Message */}
-          <Alert severity="info" sx={{ mt: 2 }}>
-            Fill in your parcel details to get a personalized WhatsApp quote from our team.
-          </Alert>
 
           {/* Get Quote Button */}
           <Box sx={{ mt: 3, textAlign: 'center' }}>
