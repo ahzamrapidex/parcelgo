@@ -540,7 +540,6 @@ export const testimonialsData = [
   {
     id: 1,
     name: "Taylor Jay",
-    role: "Founder & CEO",
     avatar: "/avatars/1.png",
     rating: 5,
     review:
@@ -550,7 +549,6 @@ export const testimonialsData = [
   {
     id: 2,
     name: "Garrett Kite",
-    role: "Business Strategist",
     avatar: "/avatars/2.png",
     rating: 5,
     review:
@@ -560,7 +558,6 @@ export const testimonialsData = [
   {
     id: 3,
     name: "Marion Campbell",
-    role: "Entrepreneur",
     avatar: "/avatars/3.png",
     rating: 5,
     review:
@@ -570,7 +567,6 @@ export const testimonialsData = [
   {
     id: 4,
     name: "Sarah Johnson",
-    role: "E-commerce Manager",
     avatar: "/avatars/4.png",
     rating: 5,
     review:
@@ -580,7 +576,6 @@ export const testimonialsData = [
   {
     id: 5,
     name: "David Chen",
-    role: "Operations Director",
     avatar: "/avatars/5.png",
     rating: 5,
     review:

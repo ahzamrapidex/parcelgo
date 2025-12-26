@@ -5,9 +5,10 @@ import {
   FacebookIcon,
   GooglePlay,
   InstagramIcon,
-    WhatsAppIcon,
+  WhatsAppIcon,
   Ireland,
   LinkedInIcon,
+  Logo,
   LogoWhite,
   TwitterIcon,
   UK,
@@ -31,13 +32,13 @@ import { useState } from "react";
 
 const Footer = () => {
   const theme = useTheme();
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
-  const [emailError, setEmailError] = useState('');
+  const [emailError, setEmailError] = useState("");
   const [notification, setNotification] = useState({
     open: false,
-    message: '',
-    severity: 'success'
+    message: "",
+    severity: "success",
   });
 
   // Email validation function
@@ -50,36 +51,36 @@ const Footer = () => {
   const handleEmailChange = (e) => {
     const value = e.target.value;
     setEmail(value);
-    
+
     // Clear previous error when user starts typing
     if (emailError) {
-      setEmailError('');
+      setEmailError("");
     }
   };
 
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     // Validate email
     if (!email.trim()) {
-      setEmailError('Email is required');
+      setEmailError("Email is required");
       return;
     }
 
     if (!validateEmail(email)) {
-      setEmailError('Please enter a valid email address');
+      setEmailError("Please enter a valid email address");
       return;
     }
 
     setLoading(true);
-    setEmailError('');
+    setEmailError("");
 
     try {
-      const response = await fetch('/api/newsletter', {
-        method: 'POST',
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ email: email.trim() }),
       });
@@ -90,22 +91,22 @@ const Footer = () => {
         setNotification({
           open: true,
           message: data.message,
-          severity: 'success'
+          severity: "success",
         });
-        setEmail(''); // Clear form on success
+        setEmail(""); // Clear form on success
       } else {
         setNotification({
           open: true,
           message: data.message,
-          severity: 'error'
+          severity: "error",
         });
       }
     } catch (error) {
-      console.error('Subscription error:', error);
+      console.error("Subscription error:", error);
       setNotification({
         open: true,
-        message: 'An error occurred. Please try again.',
-        severity: 'error'
+        message: "An error occurred. Please try again.",
+        severity: "error",
       });
     } finally {
       setLoading(false);
@@ -114,7 +115,7 @@ const Footer = () => {
 
   // Close notification
   const handleCloseNotification = () => {
-    setNotification(prev => ({ ...prev, open: false }));
+    setNotification((prev) => ({ ...prev, open: false }));
   };
 
   return (
@@ -168,13 +169,12 @@ const Footer = () => {
                 {emailError && (
                   <Typography
                     variant="caption"
-                    sx={{ 
-                      color: '#ff6b6b', 
-                      fontSize: '0.75rem', 
+                    sx={{
+                      color: "#ff6b6b",
+                      fontSize: "0.75rem",
                       px: 1,
-                      // backgroundColor: 'rgba(255, 255, 255, 0.9)',
                       borderRadius: 1,
-                      alignSelf: 'flex-start'
+                      alignSelf: "flex-start",
                     }}
                   >
                     {emailError}
@@ -190,14 +190,14 @@ const Footer = () => {
                   color: "white",
                   fontWeight: 600,
                   px: 4,
-                  minHeight: '40px',
+                  minHeight: "40px",
                   "&:disabled": {
                     opacity: 0.7,
                     backgroundColor: "secondary.main",
                   },
                 }}
               >
-                {loading ? 'Submitting...' : 'Submit'}
+                {loading ? "Submitting..." : "Submit"}
               </Button>
             </Stack>
           </Stack>
@@ -217,13 +217,21 @@ const Footer = () => {
             {/* Logo and Social Section */}
             <Grid item xs={12} md={3}>
               <Stack spacing={3}>
-                {/* Logo */}
-                <Image
-                  src={LogoWhite}
-                  alt="ParcelGo logo"
-                  width={150}
-                  height={"auto"}
-                />
+                {/* Logo - Fixed sizing */}
+<Box sx={{ width: "300px" }}> {/* Larger container */}
+  <Image
+    src={Logo}
+    alt="ParcelGo logo"
+    width={300} // Match container width
+    height={90}  // Proportional height
+    style={{ 
+      objectFit: "contain",
+      display: "block",
+      width: "300px !important", // Force the width
+      height: "auto !important", // Auto height to maintain ratio
+    }}
+  />
+</Box>
 
                 {/* Connect With Us */}
                 <Stack spacing={2}>
@@ -277,8 +285,27 @@ const Footer = () => {
                     Country
                   </Typography>
                   <Stack direction="row" spacing={1} alignItems="center">
-                    <Image src={UK} alt="UK" width={24} height={24} />
-                    <Image src={Ireland} alt="Ireland" width={24} height={24} />
+                    <Image 
+                      src={UK} 
+                      alt="UK" 
+                      width={24} 
+                      height={16}
+                      style={{ 
+                        objectFit: "cover",
+                        borderRadius: "2px",
+                        // border: "5px solid #cc1010ff"
+                      }}
+                    />
+                    <Image 
+                      src={Ireland} 
+                      alt="Ireland" 
+                      width={24} 
+                      height={16}
+                      style={{ 
+                        objectFit: "cover",
+                        borderRadius: "2px"
+                      }}
+                    />
                   </Stack>
                 </Stack>
 
@@ -288,20 +315,32 @@ const Footer = () => {
                     Download our P2G App
                   </Typography>
                   <Stack spacing={1}>
-                    <Image
-                      src={Apple}
-                      alt="Download on App Store"
-                      width={120}
-                      height={35}
-                      style={{ cursor: "pointer" }}
-                    />
-                    <Image
-                      src={GooglePlay}
-                      alt="Get it on Google Play"
-                      width={120}
-                      height={35}
-                      style={{ cursor: "pointer" }}
-                    />
+                    <Box sx={{ width: "fit-content" }}>
+                      <Image
+                        src={Apple}
+                        alt="Download on App Store"
+                        width={120}
+                        height={36}
+                        style={{ 
+                          cursor: "pointer", 
+                          objectFit: "contain",
+                          display: "block"
+                        }}
+                      />
+                    </Box>
+                    <Box sx={{ width: "fit-content" }}>
+                      <Image
+                        src={GooglePlay}
+                        alt="Get it on Google Play"
+                        width={120}
+                        height={36}
+                        style={{ 
+                          cursor: "pointer", 
+                          objectFit: "contain",
+                          display: "block"
+                        }}
+                      />
+                    </Box>
                   </Stack>
                 </Stack>
               </Stack>
@@ -318,13 +357,14 @@ const Footer = () => {
                 <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
                   Contact Us
                 </Typography>
-                
+
                 <Stack spacing={1}>
                   <Typography variant="subtitle2" sx={{ fontWeight: 600 }}>
                     Address
                   </Typography>
                   <Typography variant="body2" sx={{ lineHeight: 1.6 }}>
-                    1a, Beattyville Gardens,<br />
+                    1a, Beattyville Gardens,
+                    <br />
                     Ilford, England, IG6 1JN
                   </Typography>
                 </Stack>
@@ -333,9 +373,9 @@ const Footer = () => {
                   <Typography variant="subtitle2" sx={{ fontWeight: 600 }}>
                     Phone
                   </Typography>
-                  <Typography 
-                    variant="body2" 
-                    component="a" 
+                  <Typography
+                    variant="body2"
+                    component="a"
                     href="tel:07466005024"
                     sx={{
                       textDecoration: "none",
@@ -376,13 +416,13 @@ const Footer = () => {
         open={notification.open}
         autoHideDuration={6000}
         onClose={handleCloseNotification}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
       >
         <Alert
           onClose={handleCloseNotification}
           severity={notification.severity}
           variant="filled"
-          sx={{ width: '100%' }}
+          sx={{ width: "100%" }}
         >
           {notification.message}
         </Alert>

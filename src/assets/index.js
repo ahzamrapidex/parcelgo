@@ -1,6 +1,6 @@
 "use client";
 // import from local
-import Logo from "./images/primary-logo.png";
+import Logo from "./images/parcelgo.png";
 import LogoWhite from "./images/logo-white.png";
 import TikTok from "./images/SmartSend_graphicmobile_.webp";
 import Star from "./images/star.webp";

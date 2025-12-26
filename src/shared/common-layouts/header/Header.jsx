@@ -64,16 +64,28 @@ const Header = () => {
     <>
       <AppBarStyled
         position="sticky"
-        sx={{ backgroundColor: "background.white", py: 1 }}
+        sx={{
+          backgroundColor: "background.white",
+          py: 0.5, // Reduced from py: 1
+          minHeight: "60px", // Added explicit min height
+        }}
         elevation={1}
       >
-        <ToolbarStyled>
-          <Container maxWidth="xl">
+        <ToolbarStyled
+          sx={{
+            minHeight: "60px !important", // Override default toolbar height
+            py: 0, // Remove toolbar padding
+          }}
+        >
+          <Container maxWidth="xl" sx={{ py: 0 }}>
+            {" "}
+            {/* Remove container padding */}
             <Stack
               direction="row"
-              spacing={2}
+              spacing={1} // Reduced from spacing={2}
               alignItems="center"
               justifyContent="space-between"
+              sx={{ height: "60px" }} // Fixed height for consistent spacing
             >
               <Box
                 component="img"
@@ -82,12 +94,12 @@ const Header = () => {
                 sx={{
                   cursor: "pointer",
                   width: {
-                    xs: "120px", // mobile width
-                    sm: "140px", // tablet width  
-                    md: "160px", // desktop width
+                    xs: "160px",
+                    sm: "200px",
+                    md: "240px",
                   },
                   height: "auto",
-                  objectFit: "contain"
+                  objectFit: "contain",
                 }}
                 onClick={() => router.push("/home")}
               />
@@ -96,40 +108,47 @@ const Header = () => {
               <IconButton
                 aria-label="open navigation menu"
                 onClick={toggleMobileDrawer(true)}
-                sx={{ display: { xs: "inline-flex", md: "none" } }}
+                sx={{
+                  display: { xs: "inline-flex", md: "none" },
+                  p: 1, // Reduced padding
+                }}
               >
                 <MenuIcon />
               </IconButton>
 
               {/* Navigation Items */}
-              <List sx={{ display: { xs: "none", md: "flex" }, gap: 0 }}>
+              <List
+                sx={{
+                  display: { xs: "none", md: "flex" },
+                  gap: 0,
+                  py: 0, // Remove list padding
+                  my: 0, // Remove list margin
+                }}
+              >
                 {navItems.map((item) =>
                   item.label === "cart" ? (
-                    <ListItem key={item.label} disablePadding>
+                    <ListItem key={item.label} disablePadding sx={{ py: 0 }}>
                       <ListItemButton
-                        sx={{ textAlign: "center" }}
+                        sx={{
+                          textAlign: "center",
+                          py: 1, // Reduced padding
+                          minHeight: "auto",
+                        }}
                         onClick={() => router.push(item.link)}
                       >
                         <ShoppingBasketIcon sx={{ color: "text.primary" }} />
                       </ListItemButton>
                     </ListItem>
                   ) : item.label === "Services" ? (
-                    <ListItem key={item.label} disablePadding>
+                    <ListItem key={item.label} disablePadding sx={{ py: 0 }}>
                       <ListItemButton
-                        sx={{ textAlign: "center" }}
+                        sx={{
+                          textAlign: "center",
+                          py: 1, // Reduced padding
+                          minHeight: "auto",
+                        }}
                         onClick={handleServicesClick}
                       >
-                        {/* <Button
-                          id="services-button"
-                          aria-controls={
-                            servicesOpen ? "services-menu" : undefined
-                          }
-                          aria-haspopup="true"
-                          aria-expanded={servicesOpen ? "true" : undefined}
-                          onClick={handleServicesClick}
-                        >
-                          {item.label}
-                        </Button> */}
                         <Typography
                           id="services-button"
                           aria-controls={
@@ -143,6 +162,7 @@ const Header = () => {
                             fontWeight: "bold",
                             color: "text.primary",
                             textWrap: "nowrap",
+                            fontSize: "0.9rem", // Slightly smaller font
                           }}
                         >
                           {item.label}
@@ -155,9 +175,13 @@ const Header = () => {
                       />
                     </ListItem>
                   ) : (
-                    <ListItem key={item.label} disablePadding>
+                    <ListItem key={item.label} disablePadding sx={{ py: 0 }}>
                       <ListItemButton
-                        sx={{ textAlign: "center" }}
+                        sx={{
+                          textAlign: "center",
+                          py: 1, // Reduced padding
+                          minHeight: "auto",
+                        }}
                         onClick={() => router.push(item.link)}
                       >
                         <Typography
@@ -166,6 +190,7 @@ const Header = () => {
                             fontWeight: "bold",
                             color: "text.primary",
                             textWrap: "nowrap",
+                            fontSize: "0.9rem", // Slightly smaller font
                           }}
                         >
                           {item.label}
@@ -184,15 +209,28 @@ const Header = () => {
         </ToolbarStyled>
       </AppBarStyled>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer - Keep existing code */}
       <Drawer
         anchor="left"
         open={mobileOpen}
         onClose={toggleMobileDrawer(false)}
         ModalProps={{ keepMounted: true }}
       >
-        <Box sx={{ width: 300, display: "flex", flexDirection: "column", height: "100%" }} role="presentation">
-          <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ p: 2 }}>
+        <Box
+          sx={{
+            width: 300,
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+          }}
+          role="presentation"
+        >
+          <Stack
+            direction="row"
+            alignItems="center"
+            justifyContent="space-between"
+            sx={{ p: 2 }}
+          >
             <Image
               src={Logo}
               style={{ cursor: "pointer" }}
@@ -204,7 +242,10 @@ const Header = () => {
                 setMobileOpen(false);
               }}
             />
-            <IconButton aria-label="close navigation menu" onClick={toggleMobileDrawer(false)}>
+            <IconButton
+              aria-label="close navigation menu"
+              onClick={toggleMobileDrawer(false)}
+            >
               <CloseIcon />
             </IconButton>
           </Stack>
@@ -215,7 +256,6 @@ const Header = () => {
                 <ListItemButton
                   sx={{ textAlign: "left" }}
                   onClick={() => {
-                    // For mobile, navigate directly for all items, including Services
                     router.push(item.link);
                     setMobileOpen(false);
                   }}
@@ -282,7 +322,7 @@ const ServicesMenu = ({ anchorEl, open, onClose }) => {
       anchorOrigin={{ horizontal: "center", vertical: "bottom" }}
     >
       {/* <Paper sx={{ width: "100%", p: 0, backgroundColor: "background.white" }}> */}
-      <Container maxWidth="auto" sx={{ py: 4, px: 3, }}>
+      <Container maxWidth="auto" sx={{ py: 4, px: 3 }}>
         <Grid container spacing={6}>
           {/* Range of Couriers */}
           <Grid item xs={12} sm={6} md={4}>
@@ -317,13 +357,13 @@ const ServicesMenu = ({ anchorEl, open, onClose }) => {
                       const courierRoutes = {
                         // "All Couriers": "/couriers/all",
                         "FedEx Express": "/couriers/Fedex",
-                        "Parcelforce": "/couriers/parcel-force",
-                        "UPS": "/couriers/ups",
-                        "DPD": "/couriers/DPD",
-                        "DHL": "/couriers/dhl",
-                        "Aramex": "/couriers/aramex",
-                        "Canpar": "/couriers/canpar",
-                        "Skynet": "/couriers/skynet",
+                        Parcelforce: "/couriers/parcel-force",
+                        UPS: "/couriers/ups",
+                        DPD: "/couriers/DPD",
+                        DHL: "/couriers/dhl",
+                        Aramex: "/couriers/aramex",
+                        Canpar: "/couriers/canpar",
+                        Skynet: "/couriers/skynet",
                       };
                       const route = courierRoutes[item] || "/services/couriers";
                       handleMenuItemClick(route);
@@ -379,7 +419,6 @@ const ServicesMenu = ({ anchorEl, open, onClose }) => {
               </Box>
             </Stack>
           </Grid>
-
 
           {/* International Parcel Delivery */}
           <Grid item xs={12} sm={6} md={4}>
