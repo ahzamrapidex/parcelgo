@@ -95,7 +95,7 @@ const Footer = () => {
         <Container maxWidth="lg">
           <Grid container spacing={4}>
             {/* Logo and Social Section */}
-            <Grid item xs={12} md={2.4}>
+            <Grid item xs={12} md={3}>
               <Stack spacing={3}>
                 {/* Logo */}
                 <Image
@@ -119,7 +119,7 @@ const Footer = () => {
                       }}
                       onClick={() =>
                         window.open(
-                          "https://www.facebook.com/parcelgo",
+                          "https://www.facebook.com/share/1EjXCgBXb4/?mibextid=wwXIfr",
                           "_blank"
                         )
                       }
@@ -187,468 +187,44 @@ const Footer = () => {
               </Stack>
             </Grid>
 
-            {/* Useful Tools */}
-            <Grid item xs={12} sm={6} md={2.4}>
-              <Stack spacing={2}>
-                <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
-                  Useful Tools
-                </Typography>
-                <Link
-                  href="#"
-                  color="inherit"
-                  sx={{
-                    textDecoration: "none",
-                    "&:hover": { textDecoration: "underline" },
-                  }}
-                >
-                  Get a Quote
-                </Link>
-                <Link
-                  href="#"
-                  color="inherit"
-                  sx={{
-                    textDecoration: "none",
-                    "&:hover": { textDecoration: "underline" },
-                  }}
-                >
-                  Parcel Tracking
-                </Link>
-                <Link
-                  href="#"
-                  color="inherit"
-                  sx={{
-                    textDecoration: "none",
-                    "&:hover": { textDecoration: "underline" },
-                  }}
-                >
-                  My Account
-                </Link>
-                <Link
-                  href="#"
-                  color="inherit"
-                  sx={{
-                    textDecoration: "none",
-                    "&:hover": { textDecoration: "underline" },
-                  }}
-                >
-                  Postcode Finder
-                </Link>
-                <Link
-                  href="#"
-                  color="inherit"
-                  sx={{
-                    textDecoration: "none",
-                    "&:hover": { textDecoration: "underline" },
-                  }}
-                >
-                  Volume Calculator
-                </Link>
-                <Link
-                  href="#"
-                  color="inherit"
-                  sx={{
-                    textDecoration: "none",
-                    "&:hover": { textDecoration: "underline" },
-                  }}
-                >
-                  PrePay
-                </Link>
-                <Link
-                  href="#"
-                  color="inherit"
-                  sx={{
-                    textDecoration: "none",
-                    "&:hover": { textDecoration: "underline" },
-                  }}
-                >
-                  Item Advice
-                </Link>
-                <Link
-                  href="#"
-                  color="inherit"
-                  sx={{
-                    textDecoration: "none",
-                    "&:hover": { textDecoration: "underline" },
-                  }}
-                >
-                  Mobile App
-                </Link>
-                <Link
-                  href="#"
-                  color="inherit"
-                  sx={{
-                    textDecoration: "none",
-                    "&:hover": { textDecoration: "underline" },
-                  }}
-                >
-                  Smart Send
-                </Link>
-                <Link
-                  href="#"
-                  color="inherit"
-                  sx={{
-                    textDecoration: "none",
-                    "&:hover": { textDecoration: "underline" },
-                  }}
-                >
-                  Refer a Friend
-                </Link>
-                <Link
-                  href="#"
-                  color="inherit"
-                  sx={{
-                    textDecoration: "none",
-                    "&:hover": { textDecoration: "underline" },
-                  }}
-                >
-                  Student Discount
-                </Link>
-              </Stack>
+            {/* Middle section - Empty for now */}
+            <Grid item xs={12} md={7}>
+              {/* This space is left empty as requested */}
             </Grid>
 
-            {/* About P2G */}
-            <Grid item xs={12} sm={6} md={2.4}>
+            {/* Contact Us Section */}
+            <Grid item xs={12} md={2}>
               <Stack spacing={2}>
                 <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
-                  About P2G
+                  Contact Us
                 </Typography>
-                <Link
-                  href="#"
-                  color="inherit"
-                  sx={{
-                    textDecoration: "none",
-                    "&:hover": { textDecoration: "underline" },
-                  }}
-                >
-                  Our Company
-                </Link>
-                <Link
-                  href="#"
-                  color="inherit"
-                  sx={{
-                    textDecoration: "none",
-                    "&:hover": { textDecoration: "underline" },
-                  }}
-                >
-                  Our Couriers
-                </Link>
-                <Link
-                  href="#"
-                  color="inherit"
-                  sx={{
-                    textDecoration: "none",
-                    "&:hover": { textDecoration: "underline" },
-                  }}
-                >
-                  Terms & Conditions
-                </Link>
-                <Link
-                  href="#"
-                  color="inherit"
-                  sx={{
-                    textDecoration: "none",
-                    "&:hover": { textDecoration: "underline" },
-                  }}
-                >
-                  Careers
-                </Link>
-                <Link
-                  href="#"
-                  color="inherit"
-                  sx={{
-                    textDecoration: "none",
-                    "&:hover": { textDecoration: "underline" },
-                  }}
-                >
-                  Content Hub
-                </Link>
-                <Link
-                  href="#"
-                  color="inherit"
-                  sx={{
-                    textDecoration: "none",
-                    "&:hover": { textDecoration: "underline" },
-                  }}
-                >
-                  Returns
-                </Link>
-                <Link
-                  href="#"
-                  color="inherit"
-                  sx={{
-                    textDecoration: "none",
-                    "&:hover": { textDecoration: "underline" },
-                  }}
-                >
-                  Modern Slavery Statement
-                </Link>
-                <Link
-                  href="#"
-                  color="inherit"
-                  sx={{
-                    textDecoration: "none",
-                    "&:hover": { textDecoration: "underline" },
-                  }}
-                >
-                  Site Map
-                </Link>
-                <Link
-                  href="#"
-                  color="inherit"
-                  sx={{
-                    textDecoration: "none",
-                    "&:hover": { textDecoration: "underline" },
-                  }}
-                >
-                  Charity of the Year
-                </Link>
-              </Stack>
-            </Grid>
-
-            {/* Top Destinations */}
-            <Grid item xs={12} sm={6} md={2.4}>
-              <Stack spacing={2}>
-                <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
-                  Top Destinations
-                </Typography>
-                <Link
-                  href="#"
-                  color="inherit"
-                  sx={{
-                    textDecoration: "none",
-                    "&:hover": { textDecoration: "underline" },
-                  }}
-                >
-                  Parcel Delivery to Australia
-                </Link>
-                <Link
-                  href="#"
-                  color="inherit"
-                  sx={{
-                    textDecoration: "none",
-                    "&:hover": { textDecoration: "underline" },
-                  }}
-                >
-                  Parcel Delivery to China
-                </Link>
-                <Link
-                  href="#"
-                  color="inherit"
-                  sx={{
-                    textDecoration: "none",
-                    "&:hover": { textDecoration: "underline" },
-                  }}
-                >
-                  Parcel Delivery to France
-                </Link>
-                <Link
-                  href="#"
-                  color="inherit"
-                  sx={{
-                    textDecoration: "none",
-                    "&:hover": { textDecoration: "underline" },
-                  }}
-                >
-                  Parcel Delivery to Germany
-                </Link>
-                <Link
-                  href="#"
-                  color="inherit"
-                  sx={{
-                    textDecoration: "none",
-                    "&:hover": { textDecoration: "underline" },
-                  }}
-                >
-                  Parcel Delivery to Ireland
-                </Link>
-                <Link
-                  href="#"
-                  color="inherit"
-                  sx={{
-                    textDecoration: "none",
-                    "&:hover": { textDecoration: "underline" },
-                  }}
-                >
-                  Parcel Delivery to Spain
-                </Link>
-                <Link
-                  href="#"
-                  color="inherit"
-                  sx={{
-                    textDecoration: "none",
-                    "&:hover": { textDecoration: "underline" },
-                  }}
-                >
-                  Parcel Delivery to USA
-                </Link>
-              </Stack>
-            </Grid>
-
-            {/* Coverage and Help & Support combined for mobile */}
-            <Grid item xs={12} md={2.4}>
-              <Stack spacing={4}>
-                {/* Coverage */}
-                <Stack spacing={2}>
-                  <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
-                    Coverage
+                
+                <Stack spacing={1}>
+                  <Typography variant="subtitle2" sx={{ fontWeight: 600 }}>
+                    Address
                   </Typography>
-                  <Link
-                    href="#"
-                    color="inherit"
-                    sx={{
-                      textDecoration: "none",
-                      "&:hover": { textDecoration: "underline" },
-                    }}
-                  >
-                    All Parcel Services
-                  </Link>
-                  <Link
-                    href="#"
-                    color="inherit"
-                    sx={{
-                      textDecoration: "none",
-                      "&:hover": { textDecoration: "underline" },
-                    }}
-                  >
-                    UK Delivery
-                  </Link>
-                  <Link
-                    href="#"
-                    color="inherit"
-                    sx={{
-                      textDecoration: "none",
-                      "&:hover": { textDecoration: "underline" },
-                    }}
-                  >
-                    Europe Delivery
-                  </Link>
-                  <Link
-                    href="#"
-                    color="inherit"
-                    sx={{
-                      textDecoration: "none",
-                      "&:hover": { textDecoration: "underline" },
-                    }}
-                  >
-                    USA and Canada Delivery
-                  </Link>
-                  <Link
-                    href="#"
-                    color="inherit"
-                    sx={{
-                      textDecoration: "none",
-                      "&:hover": { textDecoration: "underline" },
-                    }}
-                  >
-                    Asia Delivery
-                  </Link>
-                  <Link
-                    href="#"
-                    color="inherit"
-                    sx={{
-                      textDecoration: "none",
-                      "&:hover": { textDecoration: "underline" },
-                    }}
-                  >
-                    Worldwide Delivery
-                  </Link>
-                  <Link
-                    href="#"
-                    color="inherit"
-                    sx={{
-                      textDecoration: "none",
-                      "&:hover": { textDecoration: "underline" },
-                    }}
-                  >
-                    All International Services
-                  </Link>
+                  <Typography variant="body2" sx={{ lineHeight: 1.6 }}>
+                    1a, Beattyville Gardens,<br />
+                    Ilford, England, IG6 1JN
+                  </Typography>
                 </Stack>
 
-                {/* Help & Support */}
-                <Stack spacing={2}>
-                  <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
-                    Help & Support
+                <Stack spacing={1}>
+                  <Typography variant="subtitle2" sx={{ fontWeight: 600 }}>
+                    Phone
                   </Typography>
-                  <Link
-                    href="#"
-                    color="inherit"
+                  <Typography 
+                    variant="body2" 
+                    component="a" 
+                    href="tel:07466005024"
                     sx={{
                       textDecoration: "none",
+                      color: "inherit",
                       "&:hover": { textDecoration: "underline" },
                     }}
                   >
-                    Help Centre
-                  </Link>
-                  <Link
-                    href="#"
-                    color="inherit"
-                    sx={{
-                      textDecoration: "none",
-                      "&:hover": { textDecoration: "underline" },
-                    }}
-                  >
-                    Make a Parcel Enquiry
-                  </Link>
-                  <Link
-                    href="#"
-                    color="inherit"
-                    sx={{
-                      textDecoration: "none",
-                      "&:hover": { textDecoration: "underline" },
-                    }}
-                  >
-                    International Shipping Hub
-                  </Link>
-                  <Link
-                    href="#"
-                    color="inherit"
-                    sx={{
-                      textDecoration: "none",
-                      "&:hover": { textDecoration: "underline" },
-                    }}
-                  >
-                    Contact Us
-                  </Link>
-                  <Link
-                    href="#"
-                    color="inherit"
-                    sx={{
-                      textDecoration: "none",
-                      "&:hover": { textDecoration: "underline" },
-                    }}
-                  >
-                    Privacy Policy
-                  </Link>
-                  <Link
-                    href="#"
-                    color="inherit"
-                    sx={{
-                      textDecoration: "none",
-                      "&:hover": { textDecoration: "underline" },
-                    }}
-                  >
-                    Cookie Policy
-                  </Link>
-                  <Link
-                    href="#"
-                    color="inherit"
-                    sx={{
-                      textDecoration: "none",
-                      "&:hover": { textDecoration: "underline" },
-                    }}
-                  >
-                    Discount Policy
-                  </Link>
-                  <Link
-                    href="#"
-                    color="inherit"
-                    sx={{
-                      textDecoration: "none",
-                      "&:hover": { textDecoration: "underline" },
-                    }}
-                  >
-                    Refund Policy
-                  </Link>
+                    07466005024
+                  </Typography>
                 </Stack>
               </Stack>
             </Grid>
