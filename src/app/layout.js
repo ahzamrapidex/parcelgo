@@ -2,12 +2,12 @@ import { Livvic } from "next/font/google";
 import "./globals.css";
 import AppProvider from "@/shared/hoc/AppProvider/AppProvider";
 
-const livvic = Livvic({
-  subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '900'],
-  style: ['normal', 'italic'],
-  variable: '--font-livvic',
-})
+// const livvic = Livvic({
+//   subsets: ['latin'],
+//   weight: ['100', '200', '300', '400', '500', '600', '700', '900'],
+//   style: ['normal', 'italic'],
+//   variable: '--font-livvic',
+// })
 
 
 export const metadata = {

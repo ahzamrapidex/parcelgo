@@ -278,7 +278,7 @@ const Footer = () => {
             <Box sx={{ backgroundColor: theme.palette.background["200"], py: 2, color: '#ccc' }}>
                 <Container maxWidth="lg">
                     <Typography variant="body2" sx={{ textAlign: 'center', fontSize: '0.875rem', color: 'white' }}>
-                        © Parcel2Go.com Ltd 1995-2025 All Rights Reserved. | Company Number: 02591405 | VAT Number: 597 849161
+                        @ PARCELGO LIMITED 1995-2025 All Rights Reserved. | Company Number: 16885014
                     </Typography>
                 </Container>
             </Box>
