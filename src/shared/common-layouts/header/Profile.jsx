@@ -14,13 +14,19 @@ import {
   Typography,
 } from "@mui/material";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Person2Icon } from "@/assets";
 
 const Profile = ({ dropdown }) => {
   const [anchorEl2, setAnchorEl2] = useState(null);
+  const router = useRouter();
 
   const handleClick2 = (event) => {
     setAnchorEl2(event.currentTarget);
+  };
+
+  const handleGetQuoteClick = () => {
+    router.push('/quick-quote');
   };
 
   // Static user data - set to null to show Sign In button
@@ -94,11 +100,11 @@ const Profile = ({ dropdown }) => {
           )}
         </>
       ) : (
-        // Show Sign In button when not logged in
+        // Show Get Quote button when not logged in
         <Button
           variant="contained"
           size="large"
-          // color=""
+          onClick={handleGetQuoteClick}
           sx={{
             py: 1,
             px: 2,
@@ -107,15 +113,12 @@ const Profile = ({ dropdown }) => {
             textTransform: "none",
             color: "text.primary",
             fontWeight: "bold",
-          }}
-          onClick={() => {
-            // Handle sign in navigation
-            console.log("Navigate to sign in page");
+            "&:hover": {
+              backgroundColor: "background.paper",
+            },
           }}
         >
-          Sign In
-          <Person2Icon sx={{ color: "text.primary", ml: 1 }} />
-
+          Get Quote
         </Button>
       )}
     </Box>
