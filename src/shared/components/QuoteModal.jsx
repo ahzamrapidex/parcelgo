@@ -12,6 +12,7 @@ import {
   Box,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import UIButton from "@/shared/pure-components/button/button";
 
 const QuoteModal = ({ open, onClose, quoteData, whatsappNumber }) => {
@@ -47,7 +48,7 @@ Thank you!`;
 
     // WhatsApp requires international format WITHOUT +, spaces, dashes.
     // If your number is not in correct format, link may fail.
-    const number = String(whatsappNumber || "").replace(/[^\d]/g, "");
+    const number = String(whatsappNumber || "447466005024").replace(/[^\d]/g, "");
 
     const url = `https://wa.me/${number}?text=${encoded}`;
 
@@ -86,12 +87,7 @@ Thank you!`;
 
       <DialogContent>
         <Stack spacing={3}>
-          <Typography variant="body1" color="text.secondary">
-            Click the button below to open WhatsApp with a pre-filled message.
-          </Typography>
-
           <Divider />
-
           <Box>
             <Typography variant="h6" fontWeight="bold" gutterBottom color="primary">
               Shipping Details
@@ -116,6 +112,7 @@ Thank you!`;
               size="large"
               fullWidth
               callback={handleSendWhatsApp}
+              startIcon={<WhatsAppIcon sx={{ color: 'white', fontSize: '1.2em' }} />}
               sx={{
                 backgroundColor: "#25D366",
                 color: "white",
@@ -124,12 +121,8 @@ Thank you!`;
                 "&:hover": { backgroundColor: "#20B954" },
               }}
             >
-              📱 Send WhatsApp Message
+              Send WhatsApp Message
             </UIButton>
-
-            <Typography variant="caption" color="text.secondary" textAlign="center">
-              This opens WhatsApp with your details already filled in.
-            </Typography>
           </Stack>
         </Stack>
       </DialogContent>
