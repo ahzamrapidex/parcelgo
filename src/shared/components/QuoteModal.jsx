@@ -115,7 +115,7 @@ Thank you!`;
               variant="contained"
               size="large"
               fullWidth
-              onClick={handleSendWhatsApp}
+              callback={handleSendWhatsApp}
               sx={{
                 backgroundColor: "#25D366",
                 color: "white",

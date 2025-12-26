@@ -140,7 +140,7 @@ export default function Calculator() {
                 value={formData.sendTo} // IMPORTANT: controlled value
                 onChange={(event, option) => setField("sendTo", option || null)}
                 error={Boolean(errors.sendTo)}
-                helperText={errors.sendTo}
+                // helperText={errors.sendTo}
                 sx={{
                   backgroundColor: "white",
                   "& .MuiInputBase-root": { minHeight: "56px" },
