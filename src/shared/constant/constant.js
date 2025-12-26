@@ -495,25 +495,25 @@ export const faqsHome = [
     id: 1,
     question: "How does ParcelGo work?",
     answer:
-      "ParcelGo is the largest courier comparison site in the UK, with over 180 delivery services and free parcel comparison. <br /> <br />  If you need to send a parcel, just pop its measurements and destination into our quick quote tool and we will show you all of your cheapest shipping options, including next day delivery, 2+ day delivery and 3+ day delivery. <br /> <br /> Choose from couriers such as DPD, Evri and DHL and book your parcel delivery through us. We will send you a confirmation email once you complete your booking and you can track your parcel for free no matter what service you choose.",
+      "ParcelGo is the largest courier comparison site in the UK, with over 180 delivery services and free parcel comparison. If you need to send a parcel, just pop its measurements and destination into our quick quote tool and we will show you all of your cheapest shipping options, including next day delivery, 2+ day delivery and 3+ day delivery. Choose from couriers such as DPD, Evri and DHL and book your parcel delivery through us. We will send you a confirmation email once you complete your booking and you can track your parcel for free no matter what service you choose.",
   },
   {
     id: 2,
     question: "How long does ParcelGo take to deliver?",
     answer:
-      "We can have your parcel where it needs to be as soon as this very same day or by tomorrow if you need us to! Our express delivery options mean we offer same day delivery with CitySprint and next day delivery through most of our UK couriers. With Parcelforce, your parcel could arrive before 9am, 10am or midday tomorrow. <br /><br /> And if you're not in a rush, we have a load of economy or standard 3 day delivery services from just £1.99 exc VAT too.",
+      "We can have your parcel where it needs to be as soon as this very same day or by tomorrow if you need us to. Our express delivery options mean we offer same day delivery with CitySprint and next day delivery through most of our UK couriers. With Parcelforce, your parcel could arrive before 9am, 10am or midday tomorrow. And if you're not in a rush, we have a load of economy or standard 3 day delivery services from just £1.99 exc VAT too.",
   },
   {
     id: 3,
     question: "Why is ParcelGo cheaper?",
     answer:
-      "We work with the UK's best couriers and international courier services to negotiate the cheapest prices for you. <br /><br /> Thousands of customers and businesses use us because our postage costs are unrivalled and if you find a cheaper price elsewhere on a comparable service, we will match it. We’re committed to finding you the cheapest postage while offering you the best parcel sending experience possible. That’s our mission",
+      "We work with the UK's best couriers and international courier services to negotiate the cheapest prices for you. Thousands of customers and businesses use us because our postage costs are unrivalled and if you find a cheaper price elsewhere on a comparable service, we will match it. We’re committed to finding you the cheapest postage while offering you the best parcel sending experience possible. That’s our mission.",
   },
   {
     id: 4,
     question: "Who delivers for ParcelGo?",
     answer:
-      "We work with the UK’s best couriers, including Royal Mail, Evri, Parcelforce and more! We also have a huge selection of international courier services if you need global shipping. <br /><br /> When you send a parcel with us, you can choose from a wide variety of delivery services to suit your needs. And we’re always working on building relationships with even more couriers to bring you the cheapest parcel delivery.",
+      "We work with the UK’s best couriers, including Royal Mail, Evri, Parcelforce and more. We also have a huge selection of international courier services if you need global shipping. When you send a parcel with us, you can choose from a wide variety of delivery services to suit your needs. And we’re always working on building relationships with even more couriers to bring you the cheapest parcel delivery.",
   },
   {
     id: 5,
@@ -525,7 +525,7 @@ export const faqsHome = [
     id: 6,
     question: "What is ParcelGo PrePay?",
     answer:
-      "PrePay is a way of adding credit to your ParcelGo account. Having money preloaded onto your account can make booking your parcel delivery even quicker and easier. And when you add £100 to your PrePay balance, you’ll get an extra 2% from us for free! <br /><br /> PrePay is great if you're a regular sender or want to save money on business postage. To add money onto your ParcelGo account, go to your account and click 'PrePay'.",
+      "PrePay is a way of adding credit to your ParcelGo account. Having money preloaded onto your account can make booking your parcel delivery even quicker and easier. And when you add £100 to your PrePay balance, you’ll get an extra 2% from us for free. PrePay is great if you're a regular sender or want to save money on business postage. To add money onto your ParcelGo account, go to your account and click 'PrePay'.",
   },
   {
     id: 7,

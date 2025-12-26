@@ -81,9 +81,9 @@ const Faqs = ({ faqa }) => {
                       alignItems: "center",
                       justifyContent: "space-between",
                       transition: "background-color 0.2s ease",
-                      "&:hover": {
-                        backgroundColor: "action.hover",
-                      },
+                      // "&:hover": {
+                      //   backgroundColor: "action.hover",
+                      // },
                       ...(expanded && {
                         backgroundColor: "primary.light",
                         color: "primary.contrastText",
