@@ -238,6 +238,8 @@ import FacebookIcon from "@mui/icons-material/FacebookOutlined";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import InstagramIcon from '@mui/icons-material/Instagram';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import FaqDrawer from '../shared/common-layouts/faqs/faqs-drawer';
 
 export {
@@ -272,6 +274,8 @@ export {
   VisibilityIcon,
   WorkIcon,
   FacebookIcon,
+  InstagramIcon,
+  WhatsAppIcon,
   YouTubeIcon,
   LinkedInIcon,
   TwitterIcon,
