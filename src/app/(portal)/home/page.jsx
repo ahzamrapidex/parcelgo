@@ -412,21 +412,20 @@ const Home = () => {
             boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
           }}
         >
-          {/* Illustration - No Background */}
+          {/* Illustration */}
           <Grid item xs={12} md={5} sx={{ backgroundColor: "white" }}>
             <Image
               src={World}
-              alt="Tracking illustration with globe and devices"
+              alt="ParcelGo worldwide tracking"
               style={{
                 objectFit: "contain",
                 width: "100%",
                 height: "100%",
-                flex: 1,
               }}
             />
           </Grid>
 
-          {/* Text Content - Blue Background */}
+          {/* Text Content */}
           <Grid item xs={12} md={7}>
             <Box
               sx={{
@@ -439,82 +438,23 @@ const Home = () => {
                 justifyContent: "center",
               }}
             >
-              {/* Main Heading */}
-              <Typography
-                variant="h4"
-                sx={{
-                  fontWeight: "bold",
-                  mb: 3,
-                  lineHeight: 1.1,
-                }}
-              >
-                Free Tracking on all Parcel Services
+              <Typography variant="h4" sx={{ fontWeight: "bold", mb: 3 }}>
+                Free Tracking with Every Parcel
               </Typography>
 
-              {/* First Paragraph */}
-              <Typography
-                variant="body1"
-                sx={{
-                  mb: 3,
-                  lineHeight: 1.5,
-                  fontWeight: 400,
-                }}
-              >
-                Whether you need to send a parcel within the UK or overseas, at
-                Parcel2Go you can always{" "}
-                <Box
-                  component="span"
-                  sx={{ fontWeight: "bold", textDecoration: "underline" }}
-                >
-                  track a parcel
-                </Box>{" "}
-                for free.
+              <Typography variant="body1">
+                All ParcelGo shipments include free online tracking so you
+                always know where your parcel is.
               </Typography>
 
-              {/* Second Paragraph */}
-              <Typography
-                variant="body1"
-                sx={{
-                  mb: 3,
-                  lineHeight: 1.5,
-                  fontWeight: 400,
-                }}
-              >
-                We offer parcel tracking on all parcel delivery, including{" "}
-                <Box
-                  component="span"
-                  sx={{ fontWeight: "bold", textDecoration: "underline" }}
-                >
-                  collection services
-                </Box>{" "}
-                as well as{" "}
-                <Box
-                  component="span"
-                  sx={{ fontWeight: "bold", textDecoration: "underline" }}
-                >
-                  drop off services
-                </Box>
-                . So you can be certain that your parcel will arrive safely at
-                no extra cost.
+              <Typography variant="body1">
+                Track your parcel anytime directly through the ParcelGo website
+                with real-time updates.
               </Typography>
 
-              {/* Third Paragraph */}
-              <Typography
-                variant="body1"
-                sx={{
-                  lineHeight: 1.5,
-                  fontWeight: 400,
-                }}
-              >
-                And for extra peace of mind, add{" "}
-                <Box
-                  component="span"
-                  sx={{ fontWeight: "bold", textDecoration: "underline" }}
-                >
-                  Parcel Protection
-                </Box>{" "}
-                up to the value of £10,000. If you ever have an issue with a
-                parcel, our customer service team is available 24/7 to help you.
+              <Typography variant="body1">
+                From pickup to final delivery, ParcelGo keeps you informed at
+                every step.
               </Typography>
             </Box>
           </Grid>
@@ -534,7 +474,7 @@ const Home = () => {
             border: "1px solid #E0E3EA",
           }}
         >
-          {/* Illustration - No Background */}
+          {/* Illustration */}
           <Grid
             item
             xs={12}
@@ -549,12 +489,11 @@ const Home = () => {
           >
             <Image
               src={Delivery}
-              alt="Express delivery illustration"
+              alt="ParcelGo express delivery"
               style={{
                 objectFit: "contain",
                 width: "100%",
                 height: "100%",
-                flex: 1,
               }}
             />
           </Grid>
@@ -567,86 +506,23 @@ const Home = () => {
             sx={{ display: "flex", alignItems: "center" }}
           >
             <Box sx={{ p: { xs: 3, md: 4 } }}>
-              <Typography
-                variant="h4"
-                sx={{
-                  fontWeight: "bold",
-                  mb: 3,
-                  lineHeight: 1.1,
-                }}
-              >
-                Express Delivery Made Easy
+              <Typography variant="h4" sx={{ fontWeight: "bold", mb: 3 }}>
+                Fast & Reliable Delivery Made Simple
               </Typography>
-              <Typography
-                variant="body1"
-                sx={{
-                  mb: 2,
-                  fontSize: "1.05rem",
-                }}
-              >
-                Do you need your parcel to arrive{" "}
-                <Box
-                  component="span"
-                  sx={{
-                    fontWeight: "bold",
-                    textDecoration: "underline",
-                    display: "inline",
-                  }}
-                >
-                  the next day
-                </Box>
-                ? Want it there before 9am? Or even the very{" "}
-                <Box
-                  component="span"
-                  sx={{
-                    fontWeight: "bold",
-                    textDecoration: "underline",
-                    display: "inline",
-                  }}
-                >
-                  same day
-                </Box>
-                ?
+
+              <Typography variant="body1">
+                ParcelGo offers flexible delivery options designed to match your
+                speed and budget needs.
               </Typography>
-              <Typography
-                variant="body1"
-                sx={{
-                  mb: 2,
-                  fontSize: "1.05rem",
-                }}
-              >
-                We specialise in express delivery. Choose same day delivery with
-                CitySprint or next day delivery is available with many of our{" "}
-                <Box
-                  component="span"
-                  sx={{
-                    fontWeight: "bold",
-                    textDecoration: "underline",
-                    display: "inline",
-                  }}
-                >
-                  UK couriers
-                </Box>{" "}
-                and starts from just £1.99 exc VAT.
+
+              <Typography variant="body1">
+                Choose express or standard services based on urgency and
+                destination.
               </Typography>
-              <Typography
-                variant="body1"
-                sx={{
-                  fontSize: "1.05rem",
-                }}
-              >
-                And if your parcel is of the highest importance, our{" "}
-                <Box
-                  component="span"
-                  sx={{
-                    fontWeight: "bold",
-                    textDecoration: "underline",
-                    display: "inline",
-                  }}
-                >
-                  signed for delivery
-                </Box>{" "}
-                options offer that added layer of protection.
+
+              <Typography variant="body1">
+                Every delivery is handled with care to ensure safe and timely
+                arrival.
               </Typography>
             </Box>
           </Grid>

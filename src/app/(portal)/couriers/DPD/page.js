@@ -37,7 +37,7 @@ const DPD = () => {
     `With over 500 depots in 185 countries and territories, you can rest assured that DPD courier services are tailored to meet high demand both locally and internationally. DPD Express and its other shipping services offer quick and reliable door to door services across the UK and international locations.`,
     `DPD offers a service for all types of senders, whether you are a one-time sender or you need to send in bulk for your online e-commerce shop. Furthermore, if you need to ship worldwide, DPD is well-equipped to handle any demand you have, allowing you to send up to 30kg per parcel.`,
     `With DPD drop-off services and DPD collection points available, DPD’s extensive network across the UK has got you covered. You’ll always get the best possible DPD courier service to ensure your parcels get from A to B safely and on time, without the hassle!`,
-    `When you ship with Parcel2Go, you’ll always get the most competitive prices from DPD! DPD prices start from as low as £5.29 exc VAT - find out your cost with our quick quote tool now`
+    `When you ship with ParcelGo, you’ll always get the most competitive prices from DPD! DPD prices start from as low as £5.29 exc VAT - find out your cost with our quick quote tool now`
   ];
 
   return (
@@ -505,7 +505,7 @@ const DPD = () => {
           {/* Free Tracking */}
           <FreeTrackingSection
             title="Free DPD Tracking"
-            description="Looking for professional courier tracking at no extra cost? Get free parcel tracking on all DPD delivery services with Parcel2Go."
+            description="Looking for professional courier tracking at no extra cost? Get free parcel tracking on all DPD delivery services with ParcelGo."
             ctaText="Track Your DPD Parcel"
             image={FedexTracking}
             imageAlt="FedEx Free Tracking"

@@ -484,7 +484,7 @@ const ServicesMenu = ({ anchorEl, open, onClose }) => {
               </Typography>
               <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
                 {[
-                  "Parcel2Go Prepay",
+                  "ParcelGo Prepay",
                   "Postcode Finder",
                   "Parcel Volume Calculator",
                   "Print Your Labels",

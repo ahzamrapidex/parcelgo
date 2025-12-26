@@ -28,8 +28,8 @@ const dhlBenefits = [
 
 const dhlAboutParagraphs = [
   "DHL UK is one of the most well-known and trusted brands around the globe. It was created in San Francisco in the USA in 1969, but it is now owned by German logistics company Deutsche Post. Currently present in over 220 countries and territories, DHL UK strives to be the leading logistics company for UK and international needs.",
-  "Offering a range of express logistical solutions that are focused around their customers, DHL home delivery makes sending parcels simpler. That’s why Parcel2Go is proud to include them in our extensive delivery network.",
-  "Get a DHL quote now with our quick quote tool - prices start from £8.14 exc VAT. Book your DHL shipping through Parcel2Go and get reliable and safe door to door delivery."
+  "Offering a range of express logistical solutions that are focused around their customers, DHL home delivery makes sending parcels simpler. That’s why ParcelGo is proud to include them in our extensive delivery network.",
+  "Get a DHL quote now with our quick quote tool - prices start from £8.14 exc VAT. Book your DHL shipping through ParcelGo and get reliable and safe door to door delivery."
 ];
 
 
@@ -237,7 +237,7 @@ const DHL = () => {
           {/* Free Tracking */}
           <FreeTrackingSection
             title="Free DHL Tracking"
-            description="Looking for professional courier tracking at no extra cost? Get free parcel tracking on all DHL delivery services with Parcel2Go."
+            description="Looking for professional courier tracking at no extra cost? Get free parcel tracking on all DHL delivery services with ParcelGo."
             image={DHLFreeTracking}
             imageAlt="Free UPS Tracking"
           />

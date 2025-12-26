@@ -220,7 +220,7 @@ const Footer = () => {
                 {/* Logo */}
                 <Image
                   src={LogoWhite}
-                  alt="Parcel2Go logo"
+                  alt="ParcelGo logo"
                   width={150}
                   height={"auto"}
                 />

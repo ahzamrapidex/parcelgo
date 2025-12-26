@@ -51,7 +51,7 @@ const TrackParcel = () => {
               <Box>
                 <InputField
                   name="trackingNumber"
-                  label="Parcel2Go reference number *"
+                  label="ParcelGo reference number *"
                   placeholder="Enter your tracking number"
                   fullWidth
                   sx={{

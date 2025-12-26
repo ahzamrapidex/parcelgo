@@ -61,7 +61,7 @@ const SmartSend = () => {
     {
       title: "Savvy Side Hustler",
       description:
-        "Sarah told us how she sells her camera equipment both nationally and internationally with the help of Parcel2Go.",
+        "Sarah told us how she sells her camera equipment both nationally and internationally with the help of ParcelGo.",
       image: SavvySide,
       href: "#",
     },
@@ -285,8 +285,8 @@ const SmartSend = () => {
                     variant="body1"
                     sx={{ fontSize: "1.1rem", lineHeight: 1.6 }}
                   >
-                    Parcel2Go's free online shipping software, Smart Send, lets
-                    you link your sales channels with your Parcel2Go account to
+                    ParcelGo's free online shipping software, Smart Send, lets
+                    you link your sales channels with your ParcelGo account to
                     import orders and ship from one place.
                   </Typography>
 
@@ -1692,7 +1692,7 @@ const SmartSend = () => {
                         color: "text.primary",
                       }}
                     >
-                      Parcel2Go prioritises affordable shipping costs, and Smart
+                      ParcelGo prioritises affordable shipping costs, and Smart
                       Send is even cheaper.
                     </Typography>
 
@@ -1811,7 +1811,7 @@ const SmartSend = () => {
                       mb: 2,
                     }}
                   >
-                    "The efficiency of Parcel2Go has surpassed my expectations.
+                    "The efficiency of ParcelGo has surpassed my expectations.
                     I have sent over 50 parcels in the last month and have been
                     kept up to date every step of the way from posting to
                     delivery. I have to say they are a very impressive company

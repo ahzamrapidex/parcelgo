@@ -42,7 +42,7 @@ const ParcelForce = () => {
     `With over 25 years of experience, Parcelforce is one of the leading couriers in the parcel delivery industry. Initially launched as part of the Royal Mail Group, in 1990 it changed to Parcelforce from Royal Mail Parcels. As of 1998, it’s been known as Parcelforce Worldwide. It now delivers over 60,000 parcels every hour, meeting the demands of millions of customers. `,
     `There are over 11,500 Parcelforce drop off points and 54 Parcelforce depots across the UK, so you’ll be able to use their services wherever you are. The Parcelforce door to door collection service allows you to avoid the queues in the drop shops and have your parcel collected at a time that suits you. `,
     `Parcelforce offers a service for all types of senders. Whether you are looking to ship a parcel within the UK or worldwide, they’ve got you covered. Parcelforce 24 hour and Parcelforce 48 hour sending services also allow you to get your items to your recipient quickly.`,
-    `Find the best Parcelforce service quote with Parcel2Go today! Use our quick quote tool to find out how much it will cost you now.`
+    `Find the best Parcelforce service quote with ParcelGo today! Use our quick quote tool to find out how much it will cost you now.`
   ];
 
   return (
@@ -443,7 +443,7 @@ const ParcelForce = () => {
           {/* Parcel Force Tracking */}
           <FreeTrackingSection
             title="Free Parcelforce Tracking"
-            description="Looking for professional courier tracking at no extra cost? Get free parcel tracking on all Parcelforce delivery services with Parcel2Go."
+            description="Looking for professional courier tracking at no extra cost? Get free parcel tracking on all Parcelforce delivery services with ParcelGo."
             ctaText="Track Your FedEx Parcel"
             image={ParcelForceTracking}
             imageAlt="FedEx Free Tracking"

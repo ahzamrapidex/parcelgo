@@ -119,7 +119,7 @@ const Aramex = () => {
               {/* Free Tracking */}
           <FreeTrackingSection
             title="Free Aramex Tracking"
-            description="Looking for professional courier tracking at no extra cost? Get free parcel tracking on all Aramex delivery services with Parcel2Go."
+            description="Looking for professional courier tracking at no extra cost? Get free parcel tracking on all Aramex delivery services with ParcelGo."
             ctaText="Track Your Aramex Parcel"
             image={TrackingAramex}
             imageAlt="Aramex Free Tracking"

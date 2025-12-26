@@ -305,7 +305,7 @@ const page = () => {
                 </Typography>
                 <Typography variant="body1" sx={{ mb: 3 }}>
                   Save up to 42% on collection services When you sign up for a
-                  Parcel2Go Business Account
+                  ParcelGo Business Account
                 </Typography>
                 <Box sx={{ mt: 2 }}>
                   <Image
@@ -413,7 +413,7 @@ const page = () => {
                 }}
               >
                 If you regularly send over 25 parcels a week, you could save up
-                to 42% on collection services when you open a Parcel2Go Business
+                to 42% on collection services when you open a ParcelGo Business
                 Account. We currently offer business accounts with Parcelforce,
                 DPD and Evri to bring you the cheapest postage costs.
               </Typography>
@@ -469,7 +469,7 @@ const page = () => {
                     variant="body1"
                     sx={{ fontSize: { xs: "0.95rem", md: "1rem" } }}
                   >
-                    A dedicated Parcel2Go account manager and phone number
+                    A dedicated ParcelGo account manager and phone number
                   </Typography>
                 </Box>
               </Stack>
@@ -661,7 +661,7 @@ const page = () => {
                 }}
               >
                 You can even link your own website by applying for a
-                Parcel2Go.com API key in your 'Linked Accounts'.
+                ParcelGo.com API key in your 'Linked Accounts'.
               </Typography>
 
               {/* CTA Button */}

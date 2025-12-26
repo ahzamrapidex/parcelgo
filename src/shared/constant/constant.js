@@ -493,25 +493,25 @@ export const cardStyles = {
 export const faqsHome = [
   {
     id: 1,
-    question: "How does Parcel2Go work?",
+    question: "How does ParcelGo work?",
     answer:
-      "Parcel2Go is the largest courier comparison site in the UK, with over 180 delivery services and free parcel comparison. <br /> <br />  If you need to send a parcel, just pop its measurements and destination into our quick quote tool and we will show you all of your cheapest shipping options, including next day delivery, 2+ day delivery and 3+ day delivery. <br /> <br /> Choose from couriers such as DPD, Evri and DHL and book your parcel delivery through us. We will send you a confirmation email once you complete your booking and you can track your parcel for free no matter what service you choose.",
+      "ParcelGo is the largest courier comparison site in the UK, with over 180 delivery services and free parcel comparison. <br /> <br />  If you need to send a parcel, just pop its measurements and destination into our quick quote tool and we will show you all of your cheapest shipping options, including next day delivery, 2+ day delivery and 3+ day delivery. <br /> <br /> Choose from couriers such as DPD, Evri and DHL and book your parcel delivery through us. We will send you a confirmation email once you complete your booking and you can track your parcel for free no matter what service you choose.",
   },
   {
     id: 2,
-    question: "How long does Parcel2Go take to deliver?",
+    question: "How long does ParcelGo take to deliver?",
     answer:
       "We can have your parcel where it needs to be as soon as this very same day or by tomorrow if you need us to! Our express delivery options mean we offer same day delivery with CitySprint and next day delivery through most of our UK couriers. With Parcelforce, your parcel could arrive before 9am, 10am or midday tomorrow. <br /><br /> And if you're not in a rush, we have a load of economy or standard 3 day delivery services from just £1.99 exc VAT too.",
   },
   {
     id: 3,
-    question: "Why is Parcel2Go cheaper?",
+    question: "Why is ParcelGo cheaper?",
     answer:
       "We work with the UK's best couriers and international courier services to negotiate the cheapest prices for you. <br /><br /> Thousands of customers and businesses use us because our postage costs are unrivalled and if you find a cheaper price elsewhere on a comparable service, we will match it. We’re committed to finding you the cheapest postage while offering you the best parcel sending experience possible. That’s our mission",
   },
   {
     id: 4,
-    question: "Who delivers for Parcel2Go?",
+    question: "Who delivers for ParcelGo?",
     answer:
       "We work with the UK’s best couriers, including Royal Mail, Evri, Parcelforce and more! We also have a huge selection of international courier services if you need global shipping. <br /><br /> When you send a parcel with us, you can choose from a wide variety of delivery services to suit your needs. And we’re always working on building relationships with even more couriers to bring you the cheapest parcel delivery.",
   },
@@ -523,15 +523,15 @@ export const faqsHome = [
   },
   {
     id: 6,
-    question: "What is Parcel2Go PrePay?",
+    question: "What is ParcelGo PrePay?",
     answer:
-      "PrePay is a way of adding credit to your Parcel2Go account. Having money preloaded onto your account can make booking your parcel delivery even quicker and easier. And when you add £100 to your PrePay balance, you’ll get an extra 2% from us for free! <br /><br /> PrePay is great if you're a regular sender or want to save money on business postage. To add money onto your Parcel2Go account, go to your account and click 'PrePay'.",
+      "PrePay is a way of adding credit to your ParcelGo account. Having money preloaded onto your account can make booking your parcel delivery even quicker and easier. And when you add £100 to your PrePay balance, you’ll get an extra 2% from us for free! <br /><br /> PrePay is great if you're a regular sender or want to save money on business postage. To add money onto your ParcelGo account, go to your account and click 'PrePay'.",
   },
   {
     id: 7,
-    question: "How do I get postage labels with Parcel2Go?",
+    question: "How do I get postage labels with ParcelGo?",
     answer:
-      "Whether you're sending a parcel from home or managing a small business, getting postage labels with Parcel2Go is quick and easy. Many of our courier services offer label free drop offs where you simply scan a QR code when you drop off your parcel. Alternatively, you can download and print the shipping label at home, or choose a collection service where the courier brings the label to you at collection.",
+      "Whether you're sending a parcel from home or managing a small business, getting postage labels with ParcelGo is quick and easy. Many of our courier services offer label free drop offs where you simply scan a QR code when you drop off your parcel. Alternatively, you can download and print the shipping label at home, or choose a collection service where the courier brings the label to you at collection.",
   },
 ];
 
@@ -540,19 +540,19 @@ export const faqsQuickQuote = [
     id: 1,
     question: "What is the cheapest way to send a parcel?",
     answer:
-      "The cheapest way to send a parcel is with Parcel2Go from just £1.99 exc VAT. Our cheapest courier service is currently provided by Evri, but we have a range of affordable delivery prices with a variety of couriers, including Yodel Direct, FedEx, and DPD. <br /><br /> Whether you need next day delivery or to send a parcel abroad, filter our quote results page by price to find the cheapest delivery service for you. <br /><br /> All of Parcel2Go’s cheapest prices are based on the cost of sending a 1kg parcel, but enter your parcel’s weight and dimensions into the quick quote tool above to get an accurate price.",
+      "The cheapest way to send a parcel is with ParcelGo from just £1.99 exc VAT. Our cheapest courier service is currently provided by Evri, but we have a range of affordable delivery prices with a variety of couriers, including Yodel Direct, FedEx, and DPD. <br /><br /> Whether you need next day delivery or to send a parcel abroad, filter our quote results page by price to find the cheapest delivery service for you. <br /><br /> All of ParcelGo’s cheapest prices are based on the cost of sending a 1kg parcel, but enter your parcel’s weight and dimensions into the quick quote tool above to get an accurate price.",
   },
   {
     id: 2,
     question: "Which courier service is the best in the UK?",
     answer:
-      "The best courier service in the UK depends on your needs. Use Parcel2Go’s quick quote tool to easily compare a range of courier services by price, speed and customer rating. Book your parcel delivery in minutes! <br /><br /> And if you’re looking for the cheapest courier service, Parcel2Go is guaranteed to be your cheapest option. And with free tracking available with every order, you can rest assured your parcel will arrive where and when you need it to.",
+      "The best courier service in the UK depends on your needs. Use ParcelGo’s quick quote tool to easily compare a range of courier services by price, speed and customer rating. Book your parcel delivery in minutes! <br /><br /> And if you’re looking for the cheapest courier service, ParcelGo is guaranteed to be your cheapest option. And with free tracking available with every order, you can rest assured your parcel will arrive where and when you need it to.",
   },
   {
     id: 3,
     question: "How to send multiple parcels?",
     answer:
-      "To send multiple parcels at once, use our quick quote tool as usual but change the quantity of parcels you’d like to send. If you're sending parcels with different sizes or weights, alter this in just seconds when you get a Parcel2Go quote. <br /><br /> Choose your preferred courier service and follow the booking process as usual - you can enter the different values, contents and delivery addresses for your parcels before you book. <br /><br /> And if bulk parcel delivery is something you manage regularly, you could benefit from using Smart Send. Our free shipping management tool allows you to oversee parcel delivery from multiple sales channels all from one place, as well as automating your orders. Smart Send can save you bags of time on admin and allows you to streamline your parcel delivery.",
+      "To send multiple parcels at once, use our quick quote tool as usual but change the quantity of parcels you’d like to send. If you're sending parcels with different sizes or weights, alter this in just seconds when you get a ParcelGo quote. <br /><br /> Choose your preferred courier service and follow the booking process as usual - you can enter the different values, contents and delivery addresses for your parcels before you book. <br /><br /> And if bulk parcel delivery is something you manage regularly, you could benefit from using Smart Send. Our free shipping management tool allows you to oversee parcel delivery from multiple sales channels all from one place, as well as automating your orders. Smart Send can save you bags of time on admin and allows you to streamline your parcel delivery.",
   },
 ];
 
@@ -585,7 +585,7 @@ export const faqsFedex = [
   {
     id: 5,
     question: "How to send a Fedex Express parcel?",
-    answer: "To send a FedEx Express parcel, book your delivery online, print and attach your label, then drop it off at your nearest FedEx location or arrange a collection from your door. Send from just £2.20 with Parcel2Go and track your parcel for free.",
+    answer: "To send a FedEx Express parcel, book your delivery online, print and attach your label, then drop it off at your nearest FedEx location or arrange a collection from your door. Send from just £2.20 with ParcelGo and track your parcel for free.",
   },
 ];
 
@@ -628,12 +628,12 @@ export const faqsDHL = [
   {
     id: 8,
     question: "Can DHL collect from my home or office?",
-    answer: "Yes, DHL offers collection services from both residential and business addresses. Just select the collection option and clearly write your address when booking through Parcel2Go.",
+    answer: "Yes, DHL offers collection services from both residential and business addresses. Just select the collection option and clearly write your address when booking through ParcelGo.",
   },
   {
     id: 9,
     question: "Does DHL collection cost more than drop off?",
-    answer: "DHL collection is accounted for and included in the total price when booking through Parcel2Go. In some cases, drop-off services may be slightly cheaper, but home collection adds convenience.",
+    answer: "DHL collection is accounted for and included in the total price when booking through ParcelGo. In some cases, drop-off services may be slightly cheaper, but home collection adds convenience.",
   },
 ];
 
@@ -666,7 +666,7 @@ export const faqsdpd = [
   {
     id: 6,
     question: "How long does DPD take to deliver?",
-    answer: "DPD typically delivers UK parcels within 1–2 working days, with next-day delivery available on selected services. Book your DPD delivery from just [insert lowest pricing component] with Parcel2Go for fast, fully tracked shipping",
+    answer: "DPD typically delivers UK parcels within 1–2 working days, with next-day delivery available on selected services. Book your DPD delivery from just [insert lowest pricing component] with ParcelGo for fast, fully tracked shipping",
   },
   {
     id: 7,
@@ -681,7 +681,7 @@ export const faqsdpd = [
   {
     id: 9,
     question: "How to send a DPD parcel?",
-    answer: "To send a parcel with DPD, simply book online, print your label, and drop off at one of 6,000 DPD shops or arrange a home collection. Get the best DPD prices today through Parcel2Go and track every step for free.",
+    answer: "To send a parcel with DPD, simply book online, print your label, and drop off at one of 6,000 DPD shops or arrange a home collection. Get the best DPD prices today through ParcelGo and track every step for free.",
   },
 ];
 
@@ -699,7 +699,7 @@ export const faqsParcelforce = [
   {
     id: 3,
     question: "Do Parcelforce deliver on Saturdays and Sundays?",
-    answer: "Parcelforce do not deliver on weekends or Bank Holidays with Parcel2Go. Standard delivery times are Monday to Friday between 7am - 6pm.",
+    answer: "Parcelforce do not deliver on weekends or Bank Holidays with ParcelGo. Standard delivery times are Monday to Friday between 7am - 6pm.",
   },
   {
     id: 4,
@@ -729,7 +729,7 @@ export const faqsParcelforce = [
   {
     id: 9,
     question: "How do you send a parcel with Parcelforce?",
-    answer: "You can send a parcel with Parcelforce by booking your delivery online, printing your label, and dropping it off at one of over 11,500 UK locations - or arrange a collection from your door. For the best Parcelforce rates and free tracking on every service, book through Parcel2Go.",
+    answer: "You can send a parcel with Parcelforce by booking your delivery online, printing your label, and dropping it off at one of over 11,500 UK locations - or arrange a collection from your door. For the best Parcelforce rates and free tracking on every service, book through ParcelGo.",
   },
 ];
 

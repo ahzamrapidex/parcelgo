@@ -730,7 +730,7 @@ const Couriers = () => {
           {/* Free Tracking */}
           <FreeTrackingSection
             title="Free FedEx Tracking"
-            description="Looking for professional courier tracking at no extra cost? Get free parcel tracking on all FedEx delivery services with Parcel2Go."
+            description="Looking for professional courier tracking at no extra cost? Get free parcel tracking on all FedEx delivery services with ParcelGo."
             ctaText="Track Your FedEx Parcel"
             image={FedexTracking}
             imageAlt="FedEx Free Tracking"
