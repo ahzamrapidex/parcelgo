@@ -23,11 +23,100 @@ import {
   TextField,
   Typography,
   useTheme,
+  Alert,
+  Snackbar,
 } from "@mui/material";
 import Image from "next/image";
+import { useState } from "react";
 
 const Footer = () => {
   const theme = useTheme();
+  const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [emailError, setEmailError] = useState('');
+  const [notification, setNotification] = useState({
+    open: false,
+    message: '',
+    severity: 'success'
+  });
+
+  // Email validation function
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  // Handle email input change
+  const handleEmailChange = (e) => {
+    const value = e.target.value;
+    setEmail(value);
+    
+    // Clear previous error when user starts typing
+    if (emailError) {
+      setEmailError('');
+    }
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    // Validate email
+    if (!email.trim()) {
+      setEmailError('Email is required');
+      return;
+    }
+
+    if (!validateEmail(email)) {
+      setEmailError('Please enter a valid email address');
+      return;
+    }
+
+    setLoading(true);
+    setEmailError('');
+
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: email.trim() }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setNotification({
+          open: true,
+          message: data.message,
+          severity: 'success'
+        });
+        setEmail(''); // Clear form on success
+      } else {
+        setNotification({
+          open: true,
+          message: data.message,
+          severity: 'error'
+        });
+      }
+    } catch (error) {
+      console.error('Subscription error:', error);
+      setNotification({
+        open: true,
+        message: 'An error occurred. Please try again.',
+        severity: 'error'
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Close notification
+  const handleCloseNotification = () => {
+    setNotification(prev => ({ ...prev, open: false }));
+  };
+
   return (
     <>
       {/* Newsletter Signup Section */}
@@ -50,34 +139,65 @@ const Footer = () => {
               Sign up for new and exclusive offers
             </Typography>
             <Stack
+              component="form"
+              onSubmit={handleSubmit}
               direction={{ xs: "column", sm: "row" }}
               spacing={2}
               sx={{ width: { xs: "100%", md: "auto" } }}
             >
-              <TextField
-                placeholder="Enter your email address"
-                variant="outlined"
-                size="small"
-                sx={{
-                  backgroundColor: "white",
-                  borderRadius: 1,
-                  minWidth: { xs: "100%", sm: "300px" },
-                  "& .MuiOutlinedInput-root": {
-                    "& fieldset": { border: "none" },
-                  },
-                }}
-              />
+              <Stack spacing={0.5}>
+                <TextField
+                  value={email}
+                  onChange={handleEmailChange}
+                  placeholder="Enter your email address"
+                  variant="outlined"
+                  size="small"
+                  error={Boolean(emailError)}
+                  sx={{
+                    backgroundColor: "white",
+                    borderRadius: 1,
+                    minWidth: { xs: "100%", sm: "300px" },
+                    "& .MuiOutlinedInput-root": {
+                      "& fieldset": { border: "none" },
+                      "&.Mui-error fieldset": {
+                        border: "2px solid #d32f2f",
+                      },
+                    },
+                  }}
+                />
+                {emailError && (
+                  <Typography
+                    variant="caption"
+                    sx={{ 
+                      color: '#ff6b6b', 
+                      fontSize: '0.75rem', 
+                      px: 1,
+                      // backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                      borderRadius: 1,
+                      alignSelf: 'flex-start'
+                    }}
+                  >
+                    {emailError}
+                  </Typography>
+                )}
+              </Stack>
               <Button
+                type="submit"
                 variant="contained"
-                color="secondary.main"
+                disabled={loading}
                 sx={{
                   backgroundColor: "secondary.main",
                   color: "white",
                   fontWeight: 600,
                   px: 4,
+                  minHeight: '40px',
+                  "&:disabled": {
+                    opacity: 0.7,
+                    backgroundColor: "secondary.main",
+                  },
                 }}
               >
-                Submit
+                {loading ? 'Submitting...' : 'Submit'}
               </Button>
             </Stack>
           </Stack>
@@ -250,6 +370,23 @@ const Footer = () => {
           </Typography>
         </Container>
       </Box>
+
+      {/* Notification Snackbar */}
+      <Snackbar
+        open={notification.open}
+        autoHideDuration={6000}
+        onClose={handleCloseNotification}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+      >
+        <Alert
+          onClose={handleCloseNotification}
+          severity={notification.severity}
+          variant="filled"
+          sx={{ width: '100%' }}
+        >
+          {notification.message}
+        </Alert>
+      </Snackbar>
     </>
   );
 };
