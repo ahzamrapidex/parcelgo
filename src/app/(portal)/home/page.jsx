@@ -120,7 +120,8 @@ const Home = () => {
                     Cheapest Shipping within the UK
                   </Typography>
                   <Typography variant="body1" sx={{ mb: 3 }}>
-                    Fast and reliable domestic delivery across the UK with Royal Mail, DPD, Evri and more top couriers!
+                    Fast and reliable domestic delivery across the UK with Royal
+                    Mail, DPD, Evri and more top couriers!
                   </Typography>
                   <Box sx={{ mt: 2 }}>
                     <Image
@@ -218,7 +219,7 @@ const Home = () => {
           </Grid>
         </Stack>
       </Container>
-      
+
       {/* Parcel Delivery Section */}
       <Container maxWidth="xl" sx={{ py: 8 }}>
         <Card
@@ -242,94 +243,53 @@ const Home = () => {
                     lineHeight: 1.2,
                   }}
                 >
-                  Cheap Parcel Delivery on All Services
+                  Cheap Parcel Delivery with the Best Prices — ParcelGo
                 </Typography>
 
                 {/* First Paragraph */}
                 <Typography
                   variant="body1"
-                  color={"text.secondary"}
-                  sx={{
-                    mb: 3,
-                    lineHeight: 1.6,
-                  }}
+                  color="text.secondary"
+                  sx={{ mb: 3, lineHeight: 1.6 }}
                 >
-                  Here at Parcel2Go, we're dedicated to bringing you the{" "}
-                  <Box
-                    component="span"
-                    sx={{ fontWeight: "bold" }}
-                  >
-                    cheapest parcel delivery in the UK
+                  At ParcelGo, we’re focused on offering{" "}
+                  <Box component="span" sx={{ fontWeight: "bold" }}>
+                    the cheapest parcel delivery
                   </Box>{" "}
-                  and worldwide. Our{" "}
-                  <Box
-                    component="span"
-                    sx={{ fontWeight: "bold" }}
-                  >
-                    Lowest Price Guarantee
+                  for both domestic and international shipping. Our goal is
+                  simple: get your parcel delivered safely at the{" "}
+                  <Box component="span" sx={{ fontWeight: "bold" }}>
+                    best possible price
                   </Box>{" "}
-                  means that no matter what delivery service you use, if you
-                  find a comparable service elsewhere, we'll match the price.
+                  without compromising on service quality.
                 </Typography>
 
                 {/* Second Paragraph */}
                 <Typography
                   variant="body1"
-                  color={"text.secondary"}
-                  sx={{
-                    mb: 3,
-                    lineHeight: 1.6,
-                  }}
+                  color="text.secondary"
+                  sx={{ mb: 3, lineHeight: 1.6 }}
                 >
-                  We work closely with the best{" "}
-                  <Box
-                    component="span"
-                    sx={{ fontWeight: "bold" }}
-                  >
-                    UK couriers
-                  </Box>
-                  , including{" "}
-                  <Box
-                    component="span"
-                    sx={{ fontWeight: "bold" }}
-                  >
-                    Royal Mail, Yodel Direct, Evri
-                  </Box>{" "}
-                  and{" "}
-                  <Box
-                    component="span"
-                    sx={{ fontWeight: "bold" }}
-                  >
-                    DPD
-                  </Box>
-                  , to bring you cheap parcel delivery without compromising on a
-                  high quality service. And with parcel delivery expert,{" "}
-                  <Box
-                    component="span"
-                    sx={{ fontWeight: "bold" }}
-                  >
-                    Sven Storkofferson
-                  </Box>
-                  , helping you glide through parcel delivery, finding the best
-                  courier services has never been easier.
+                  We work with trusted courier partners to provide reliable
+                  options for documents, parcels, and commercial shipments. You
+                  can compare services based on speed and cost, and choose what
+                  fits your needs — ParcelGo makes it straightforward.
                 </Typography>
 
                 {/* Call to Action */}
                 <Typography
                   variant="body1"
-                  color={"text.secondary"}
-                  sx={{
-                    lineHeight: 1.6,
-                  }}
+                  color="text.secondary"
+                  sx={{ lineHeight: 1.6 }}
                 >
-                  Send a parcel from just £1.99 exc VAT! Get a{" "}
+                  Get a{" "}
                   <Box
                     component="span"
                     sx={{ color: "text.primary", fontWeight: "bold" }}
                   >
                     quick quote
                   </Box>{" "}
-                  today.
+                  in seconds and book your shipment with confidence.
                 </Typography>
 
                 <Divider sx={{ my: 4 }} />
@@ -344,82 +304,79 @@ const Home = () => {
                     fontSize: { xs: "2rem", md: "2.5rem" },
                   }}
                 >
-                  Send a Parcel to over 180 Countries Worldwide
+                  Worldwide Delivery — Send a Parcel Anywhere
                 </Typography>
 
                 {/* Third Paragraph */}
                 <Typography
                   variant="body1"
-                  color={"text.secondary"}
-                  sx={{
-                    mb: 3,
-                    lineHeight: 1.6,
-                  }}
+                  color="text.secondary"
+                  sx={{ mb: 3, lineHeight: 1.6 }}
                 >
-                  Booking your parcel delivery is easy, no matter where in the
-                  world you're shipping to! All you need to do is put your
-                  parcel's destination and measurements into our{" "}
+                  Booking with ParcelGo is easy. Just enter your destination and
+                  parcel measurements into our{" "}
                   <Box
                     component="span"
                     sx={{ color: "text.primary", fontWeight: "bold" }}
                   >
-                    quick quote tool
-                  </Box>
-                  . From there you can compare parcel prices from the most
-                  reliable{" "}
-                  <Box
-                    component="span"
-                    sx={{ color: "text.primary", fontWeight: "bold" }}
-                  >
-                    international couriers
-                  </Box>
-                  .
+                    quote tool
+                  </Box>{" "}
+                  to view available services and pricing. You can compare
+                  options and select the best balance of cost and delivery time.
                 </Typography>
 
                 {/* Fourth Paragraph */}
                 <Typography
                   variant="body1"
-                  color={"text.secondary"}
-                  sx={{
-                    mb: 3,
-                    lineHeight: 1.6,
-                  }}
+                  color="text.secondary"
+                  sx={{ mb: 3, lineHeight: 1.6 }}
                 >
-                  Whether you need to send a parcel to{" "}
-                  <Box
-                    component="span"
-                    sx={{ color: "text.primary", fontWeight: "bold" }}
-                  >
-                    Australia
-                  </Box>
-                  , the{" "}
+                  Whether you're shipping to{" "}
                   <Box
                     component="span"
                     sx={{ color: "text.primary", fontWeight: "bold" }}
                   >
                     USA
-                  </Box>{" "}
-                  or beyond, we will send you all the documents you need to
-                  clear customs.
-                </Typography>
-
-                {/* Final Paragraph */}
-                <Typography
-                  variant="body1"
-                  color={"text.secondary"}
-                  sx={{
-                    lineHeight: 1.6,
-                  }}
-                >
-                  Our{" "}
+                  </Box>
+                  ,{" "}
                   <Box
                     component="span"
                     sx={{ color: "text.primary", fontWeight: "bold" }}
                   >
-                    International Shipping Hub
+                    Australia
                   </Box>{" "}
-                  is full of helpful information for sending a parcel to the EU,
-                  with details on EU VAT, shipping restrictions and more.
+                  or anywhere else, ParcelGo supports{" "}
+                  <Box
+                    component="span"
+                    sx={{ color: "text.primary", fontWeight: "bold" }}
+                  >
+                    worldwide delivery
+                  </Box>{" "}
+                  and provides the required support and documentation for
+                  international shipping.
+                </Typography>
+
+                {/* Final Paragraph (Tracking) */}
+                <Typography
+                  variant="body1"
+                  color="text.secondary"
+                  sx={{ lineHeight: 1.6 }}
+                >
+                  Every shipment includes{" "}
+                  <Box
+                    component="span"
+                    sx={{ color: "text.primary", fontWeight: "bold" }}
+                  >
+                    tracking
+                  </Box>{" "}
+                  so you can monitor progress and{" "}
+                  <Box
+                    component="span"
+                    sx={{ color: "text.primary", fontWeight: "bold" }}
+                  >
+                    track your parcel on our website
+                  </Box>{" "}
+                  from dispatch to delivery.
                 </Typography>
               </Box>
             </Grid>
@@ -435,7 +392,7 @@ const Home = () => {
               >
                 <Image
                   src={Parcel}
-                  alt="Woman working on laptop with parcels"
+                  alt="ParcelGo shipping and tracking"
                   fill
                   style={{ objectFit: "cover" }}
                 />
