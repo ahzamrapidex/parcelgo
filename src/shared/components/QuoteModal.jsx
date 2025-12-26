@@ -35,6 +35,7 @@ Thank you!`;
     const whatsappURL = `https://wa.me/447466005024?text=${encodedMessage}`;
     
     window.open(whatsappURL, '_blank');
+    onClose(); // Close modal after opening WhatsApp
   };
 
   return (

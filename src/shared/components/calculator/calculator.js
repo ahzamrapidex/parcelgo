@@ -181,15 +181,7 @@ export default function Calculator() {
                   sx={{ backgroundColor: "white" }}
                   size={isMobile ? "small" : "medium"}
                 />
-              </Stack>
-            </Box>
-
-            {/* Weight */}
-            <Box sx={{ flex: 0.5 }}>
-              <Typography variant="body2" fontWeight="600" sx={{ mb: 1, color: 'text.primary' }}>
-                Weight (kg) *
-              </Typography>
-              <InputField
+                <InputField
                 label="Weight *"
                 type="number"
                 placeholder="Weight"
@@ -200,6 +192,7 @@ export default function Calculator() {
                 sx={{ backgroundColor: "white" }}
                 size={isMobile ? "small" : "medium"}
               />
+              </Stack>
             </Box>
           </Stack>
 
