@@ -22,10 +22,16 @@ export default function UiAutoComplete({
     label: 'label',
     value: 'value',
   },
+  onChange,
+  error,
+  helperText,
+  label,
+  size = "medium",
   ...props
 }) {
   const [isLoading, setIsLoading] = useState(false)
   const [data, setData] = useState([])
+  const [inputValue, setInputValue] = useState('')
 
   const getData = async (search) => {
     if (opt?.length) {
@@ -33,6 +39,7 @@ export default function UiAutoComplete({
         opt?.map((e) => ({
           id: e[optionRenderKeys?.value],
           name: e[optionRenderKeys?.label],
+          ...e
         }))
       )
       return
@@ -44,22 +51,8 @@ export default function UiAutoComplete({
       const { data } = await ApiManager({ path })
       console.log(data)
       if (data.status == 200 && data?.response) {
-        let filteredData = data?.response?.details
-        if (!Array.isArray(filteredData)) filteredData = filteredData?.items
-        setData(
-          filteredData?.map((each) => ({
-            id: each.id,
-            name:
-              each?.name ||
-              each?.title ||
-              each?.dealName ||
-              each?.label ||
-              each?.range ||
-              each?.first_name + ' ' + each?.last_name,
-            ...(each?.code && { code: each?.code }),
-            ...(each?.country_code && { country_code: each?.country_code }),
-          }))
-        )
+        const res = data?.response?.data ?? data?.response
+        setData(res)
       }
     } catch (error) {
       console.log('🚀 ~ getData ~ error:', error)
@@ -68,73 +61,103 @@ export default function UiAutoComplete({
     }
   }
 
+  const debouncedGetData = debounce(getData, 300)
+
   useEffect(() => {
-    getData('')
+    getData()
   }, [])
 
-  const debouncedGetData = debounce((searchValue) => {
-    // Update the search state
-    getData(searchValue) // Fetch data based on the search value
-  }, 500)
+  const filterOptions = (options, { inputValue }) => {
+    return options.filter(option =>
+      option.name.toLowerCase().includes(inputValue.toLowerCase())
+    );
+  };
 
-  const renderAutocomplete = (onChange = null, fieldState = null) => (
+  if (control) {
+    return (
+      <Controller
+        name={name}
+        control={control}
+        defaultValue={defaultValue || null}
+        render={({ field: { onChange: fieldOnChange, value, ...field } }) => (
+          <Autocomplete
+            {...field}
+            {...props}
+            options={data}
+            getOptionLabel={(option) => option?.name || ''}
+            isOptionEqualToValue={(option, value) => option?.id === value?.id}
+            value={value || null}
+            onChange={(event, newValue) => {
+              fieldOnChange(newValue)
+              if (onChange) onChange(event, newValue)
+            }}
+            onInputChange={(event, newInputValue) => {
+              setInputValue(newInputValue)
+              if (newInputValue) {
+                debouncedGetData(newInputValue)
+              }
+            }}
+            filterOptions={filterOptions}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                label={label}
+                variant={variant || 'outlined'}
+                error={error}
+                helperText={helperText}
+                size={size}
+                sx={{ minWidth, ...props.sx }}
+                InputProps={{
+                  ...params.InputProps,
+                  endAdornment: (
+                    <>
+                      {isLoading ? <CircularProgress color="inherit" size={20} /> : null}
+                      {params.InputProps.endAdornment}
+                    </>
+                  ),
+                }}
+              />
+            )}
+          />
+        )}
+      />
+    )
+  }
+
+  return (
     <Autocomplete
       {...props}
-      onChange={(_, newValue) => {
-        onChange?.(newValue)
-        props?.onChange?.(newValue)
-      }}
-      onOpen={() => getData('')}
-      loading={isLoading}
-      options={path ? data : options}
+      options={data}
       getOptionLabel={(option) => option?.name || ''}
       isOptionEqualToValue={(option, value) => option?.id === value?.id}
+      onChange={onChange}
+      onInputChange={(event, newInputValue) => {
+        setInputValue(newInputValue)
+        if (newInputValue) {
+          debouncedGetData(newInputValue)
+        }
+      }}
+      filterOptions={filterOptions}
       renderInput={(params) => (
         <TextField
           {...params}
-          error={Boolean(fieldState?.error)}
-          helperText={fieldState?.error?.message}
-          variant={variant}
-          label={props?.label}
-          InputLabelProps={{
-            style: { color: 'GrayText' },
-          }}
-          sx={{
-            '& .MuiInputBase-input': { color: 'black' },
-            minWidth: minWidth,
-          }}
-          placeholder={props?.label}
-          onChange={(e) => debouncedGetData(e.target.value)}
+          label={label}
+          variant={variant || 'outlined'}
+          error={error}
+          helperText={helperText}
+          size={size}
+          sx={{ minWidth, ...props.sx }}
           InputProps={{
             ...params.InputProps,
             endAdornment: (
               <>
-                {props.loading && <CircularProgress size={20} />}
+                {isLoading ? <CircularProgress color="inherit" size={20} /> : null}
                 {params.InputProps.endAdornment}
               </>
             ),
           }}
         />
       )}
-      sx={{
-        '& .MuiAutocomplete-noOptions': { color: 'black !important' }, // No options text
-        '& .MuiAutocomplete-option': { color: 'black !important' }, // Dropdown options
-        '& .MuiAutocomplete-loading': { color: 'black !important' }, // Loading text
-        '& .MuiCircularProgress-root': { color: 'black !important' }, // Loading spinner
-      }}
     />
-  )
-
-  return control ? (
-    <Controller
-      name={name}
-      control={control}
-      defaultValue={defaultValue || null}
-      render={({ field, fieldState }) => {
-        return renderAutocomplete(field?.onChange, field?.value, fieldState)
-      }}
-    />
-  ) : (
-    renderAutocomplete(null, null)
   )
 }
