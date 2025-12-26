@@ -5,9 +5,9 @@ import {
   Parcel,
   SignIn,
   Star,
-  TikTok,
+  UK, // Changed from TikTok to UK
   USA,
-  World
+  World,
 } from "@/assets";
 import Faqs from "@/shared/common-layouts/faqs/faqs";
 import HomeBanner from "@/shared/components/banner/home-banner";
@@ -42,7 +42,7 @@ const Home = () => {
       <Container maxWidth="xl" sx={{ py: 8 }}>
         <Stack textAlign={"center"} spacing={FLOW_SPACER} alignItems={"center"}>
           <Typography variant="h4" fontWeight={"bold"}>
-            Comparing Prices from the UK's Most Trusted Parcel Couriers
+            Compare Prices from Leading UK Parcel Couriers
           </Typography>
 
           <Typography
@@ -95,7 +95,7 @@ const Home = () => {
               </Card>
             </Grid>
 
-            {/* TikTok Card */}
+            {/* UK Shipping Card - Changed from TikTok */}
             <Grid item xs={12} sm={6} md={3}>
               <Card
                 sx={{
@@ -117,33 +117,20 @@ const Home = () => {
                   }}
                 >
                   <Typography variant="h5" sx={{ fontWeight: "bold", mb: 2 }}>
-                    TikTok's New 50p Shipping Fee Explained
+                    Cheapest Shipping within the UK
                   </Typography>
                   <Typography variant="body1" sx={{ mb: 3 }}>
-                    Learn about TikTok's new shipping fee and how Smart Send
-                    keeps your postage costs low.
+                    Fast and reliable domestic delivery across the UK with Royal Mail, DPD, Evri and more top couriers!
                   </Typography>
                   <Box sx={{ mt: 2 }}>
                     <Image
-                      src={TikTok}
-                      alt="star"
+                      src={UK}
+                      alt="UK flag"
                       width={250}
                       height={250}
                       style={{ objectFit: "contain" }}
                     />
                   </Box>
-                  {/* <Button
-                    variant="text"
-                    sx={{
-                      color: '#4A90E2',
-                      textTransform: 'none',
-                      fontWeight: 'bold',
-                      justifyContent: 'flex-start',
-                      pl: 0
-                    }}
-                  >
-                    Read More →
-                  </Button> */}
                 </CardContent>
               </Card>
             </Grid>
@@ -179,24 +166,12 @@ const Home = () => {
                   <Box sx={{ mt: 2 }}>
                     <Image
                       src={USA}
-                      alt="star"
+                      alt="USA flag"
                       width={250}
                       height={250}
                       style={{ objectFit: "contain" }}
                     />
                   </Box>
-                  {/* <Button
-                    variant="text"
-                    sx={{
-                      color: '#4A90E2',
-                      textTransform: 'none',
-                      fontWeight: 'bold',
-                      justifyContent: 'flex-start',
-                      pl: 0
-                    }}
-                  >
-                    Get a Quote →
-                  </Button> */}
                 </CardContent>
               </Card>
             </Grid>
@@ -231,31 +206,19 @@ const Home = () => {
                   <Box sx={{ mt: 2 }}>
                     <Image
                       src={SignIn}
-                      alt="star"
+                      alt="Sign in illustration"
                       width={250}
                       height={250}
                       style={{ objectFit: "contain" }}
                     />
                   </Box>
-                  {/* <Button
-                    variant="text"
-                    sx={{
-                      color: '#4A90E2',
-                      textTransform: 'none',
-                      fontWeight: 'bold',
-                      justifyContent: 'flex-start',
-                      pl: 0
-                    }}
-                  >
-                    Go to Sign In →
-                  </Button> */}
                 </CardContent>
               </Card>
             </Grid>
           </Grid>
         </Stack>
       </Container>
-
+      
       {/* Parcel Delivery Section */}
       <Container maxWidth="xl" sx={{ py: 8 }}>
         <Card
