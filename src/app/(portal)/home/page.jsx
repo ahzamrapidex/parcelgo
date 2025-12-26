@@ -11,7 +11,9 @@ import {
 } from "@/assets";
 import Faqs from "@/shared/common-layouts/faqs/faqs";
 import HomeBanner from "@/shared/components/banner/home-banner";
-import { faqsHome, FLOW_SPACER } from "@/shared/constant/constant";
+import { faqsHome, FLOW_SPACER, testimonialsData } from "@/shared/constant/constant";
+import Testimonials from "@/shared/components/testimonials/Testimonials"; // Import testimonials component
+// import { , FLOW_SPACER, testimonialsData } from "@/shared/constant/constant"; 
 import theme from "@/shared/hoc/theme/theme";
 import {
   Box,
@@ -528,6 +530,8 @@ const Home = () => {
           </Grid>
         </Grid>
       </Container>
+
+<Testimonials testimonials={testimonialsData} />
 
       {/* Faqs Section */}
       <Faqs faqa={faqsHome} />
