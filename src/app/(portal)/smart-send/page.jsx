@@ -116,7 +116,7 @@ const SmartSend = () => {
       <Container maxWidth="xl">
         <Stack spacing={7} sx={{ py: 6 }}>
           {/* Navigation Section */}
-          <Paper
+          {/* <Paper
             elevation={0}
             sx={{
               backgroundColor: theme.palette.background["100"],
@@ -182,7 +182,7 @@ const SmartSend = () => {
                 </React.Fragment>
               ))}
             </Box>
-          </Paper>
+          </Paper> */}
 
           {/* Book a Demo Section */}
           <Paper
