@@ -36,7 +36,7 @@ const HomeBanner = ({ title, description, image }) => {
               <Image
                 src={image}
                 alt="Delivery Duck"
-                width={400}
+                width={300}
                 height={"auto"}
                 style={{ objectFit: "contain" }}
               />

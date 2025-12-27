@@ -2,6 +2,7 @@
 import {
   Delivery,
   Duck,
+  Robot,
   Parcel,
   SignIn,
   Star,
@@ -37,7 +38,7 @@ const Home = () => {
       <HomeBanner
         title="Compare the Cheapest Parcel Delivery Prices*"
         description="Send from only £2.39 (£1.99 exc VAT)"
-        image={Duck}
+        image={Robot}
       />
 
       {/* Comparing Prices */}

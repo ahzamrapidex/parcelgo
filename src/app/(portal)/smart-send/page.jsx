@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import {
-  Duck,
+  Robot1,
   ParcelImage,
   WhatSmartSend,
   WhySmartSend,
@@ -34,16 +34,16 @@ import {
   Tiktok,
   Wix,
   WooCommerce,
-  DYDynamo,
-  MarketplaceMultitask,
-  SavvySide,
+  Robot3,
+  Robot4,
+  Robot2,
 } from "@/assets";
 import Image from "next/image";
 import UIButton from "@/shared/pure-components/button/button";
 import InputField from "@/shared/form-control/InputField";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
+
 import "swiper/css";
 
 const SmartSend = () => {
@@ -62,21 +62,21 @@ const SmartSend = () => {
       title: "Savvy Side Hustler",
       description:
         "Sarah told us how she sells her camera equipment both nationally and internationally with the help of ParcelGo.",
-      image: SavvySide,
+      image: Robot2,
       href: "#",
     },
     {
       title: "DIY Dynamo",
       description:
         "Mike explains how Smart Send helps him ship his handmade bee hotels and gives tips on how to use the platform efficiently.",
-      image: DYDynamo,
+      image: Robot3,
       href: "#",
     },
     {
       title: "Marketplace Multitasker",
       description:
         "Dimitar manages a self-care business on Amazon, Etsy, NOTHS, and Shopify. We look at how Smart Send makes multichannel management even easier.",
-      image: MarketplaceMultitask,
+      image: Robot4,
       href: "#",
     },
   ];
@@ -84,7 +84,7 @@ const SmartSend = () => {
   return (
     <>
       <DynamicBanner
-        image1={<Image src={Duck} alt="Duck" width={350} height={"auto"} />}
+        image1={<Image src={Robot1} alt="Robot1" width={300} height={"auto"} />}
         image2={
           <Image
             src={ParcelImage}
@@ -183,8 +183,6 @@ const SmartSend = () => {
               ))}
             </Box>
           </Paper>
-
-
 
           {/* Book a Demo Section */}
           <Paper
@@ -391,7 +389,7 @@ const SmartSend = () => {
                     backgroundColor: theme.palette.background["100"],
                     height: "100%",
                     p: 4,
-                    // color: "white",
+                    
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
@@ -1065,7 +1063,6 @@ const SmartSend = () => {
               variant="h4"
               fontWeight="bold"
               textAlign="center"
-
               sx={{
                 fontSize: { xs: "1.8rem", md: "2.2rem" },
                 mb: 4,
@@ -1123,10 +1120,7 @@ const SmartSend = () => {
                     </Typography>
                   </Box>
                   <Box display={"flex"} flexDirection={"column"} gap={1}>
-                    <Typography
-                      variant="subtitle1"
-                      fontWeight="bold"
-                    >
+                    <Typography variant="subtitle1" fontWeight="bold">
                       Multi-channel integration
                     </Typography>
                     <Typography
@@ -1177,10 +1171,7 @@ const SmartSend = () => {
                     </Typography>
                   </Box>
                   <Box display={"flex"} flexDirection={"column"} gap={1}>
-                    <Typography
-                      variant="subtitle1"
-                      fontWeight="bold"
-                    >
+                    <Typography variant="subtitle1" fontWeight="bold">
                       Rule manager
                     </Typography>
                     <Typography
@@ -1393,7 +1384,7 @@ const SmartSend = () => {
                     <Typography
                       variant="subtitle1"
                       fontWeight="bold"
-                      sx={{ mb: 1, }}
+                      sx={{ mb: 1 }}
                     >
                       Returns management
                     </Typography>
@@ -1445,7 +1436,7 @@ const SmartSend = () => {
                     <Typography
                       variant="subtitle1"
                       fontWeight="bold"
-                      sx={{ mb: 1, }}
+                      sx={{ mb: 1 }}
                     >
                       Automated payments -
                     </Typography>
@@ -1498,7 +1489,7 @@ const SmartSend = () => {
                     <Typography
                       variant="subtitle1"
                       fontWeight="bold"
-                      sx={{ mb: 1, }}
+                      sx={{ mb: 1 }}
                     >
                       Invoice management
                     </Typography>
@@ -1516,7 +1507,10 @@ const SmartSend = () => {
 
           {/* Customer Stories Slider Section */}
           <Stack spacing={4} alignItems="center" sx={{ width: "100%" }}>
-            <Container maxWidth="lg" sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
+            <Container
+              maxWidth="lg"
+              sx={{ width: "100%", display: "flex", justifyContent: "center" }}
+            >
               <Swiper
                 style={{ width: "100%", maxWidth: "1200px" }}
                 slidesPerView={1}
@@ -1546,24 +1540,32 @@ const SmartSend = () => {
                         flexDirection: "column",
                       }}
                     >
+                      {/* Image Container */}
                       <Box
                         sx={{
                           width: "100%",
                           height: 200,
-                          position: "relative",
                           overflow: "hidden",
+                          // border: "1px solid #d30000ff",
+                          display: "flex", 
+                          alignItems: "center", 
+                          justifyContent: "center", 
                         }}
                       >
                         <Image
                           src={story.image}
                           alt={story.title}
                           style={{
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover",
+                            width: 150,
+                          // border: "1px solid #00a030ff",
+                            height: "auto", 
+                            maxHeight: "100%", 
+                            objectFit: "contain", 
+                            display: "block", 
                           }}
                         />
                       </Box>
+                      {/* Content */}
                       <Box
                         sx={{
                           p: 3,
@@ -1636,9 +1638,9 @@ const SmartSend = () => {
               <Grid item xs={12} md={6}>
                 <Box
                   sx={{
-                    // background: "linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%)",
-                    // height: "100%",
-                    // minHeight: { xs: "300px", md: "400px" },
+                    
+                    
+                    
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -1652,7 +1654,7 @@ const SmartSend = () => {
                     style={{
                       width: "100%",
                       height: "auto",
-                      //   maxWidth: "500px",
+                      
                       objectFit: "contain",
                     }}
                   />
@@ -1669,7 +1671,7 @@ const SmartSend = () => {
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
-                    // minHeight: { xs: "300px", md: "400px" },
+                    
                   }}
                 >
                   <Typography
@@ -1811,8 +1813,8 @@ const SmartSend = () => {
                       mb: 2,
                     }}
                   >
-                    "The efficiency of ParcelGo has surpassed my expectations.
-                    I have sent over 50 parcels in the last month and have been
+                    "The efficiency of ParcelGo has surpassed my expectations. I
+                    have sent over 50 parcels in the last month and have been
                     kept up to date every step of the way from posting to
                     delivery. I have to say they are a very impressive company
                     to deal with and all parcels have been delivered promptly."

@@ -2,6 +2,11 @@
 // import from local
 import Logo from "./images/parcelgo.png";
 import LogoWhite from "./images/logo-white.png";
+import Robot from "./images/original.png";
+import Robot1 from "./images/1.png";
+import Robot2 from "./images/2.png";
+import Robot3 from "./images/3.png";
+import Robot4 from "./images/4.png";
 import TikTok from "./images/SmartSend_graphicmobile_.webp";
 import Star from "./images/star.webp";
 import USA from "./images/America.webp";
@@ -155,6 +160,11 @@ export {
   DPDservices,
   Logo,
   LogoWhite,
+  Robot,
+  Robot1,
+  Robot2,
+  Robot3,
+  Robot4,
   TikTok,
   Star,
   USA,
