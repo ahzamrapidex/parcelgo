@@ -1,3 +1,4 @@
+// Update src/app/(portal)/quick-quote/page.jsx
 "use client";
 
 import {
@@ -26,9 +27,16 @@ import {
   Stack,
   TableCell,
   Typography,
+  Chip,
+  Paper,
+  Divider,
 } from "@mui/material";
 import Image from "next/image";
 import { Fragment } from "react";
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import SpeedIcon from '@mui/icons-material/Speed';
+import SecurityIcon from '@mui/icons-material/Security';
 
 const tableHeaders = [
   "Courier",
@@ -132,598 +140,264 @@ const page = () => {
         </Typography>
       </DynamicBanner>
 
-      {/* Cards Section */}
-      <Container maxWidth="xl" sx={{ py: 8 }}>
-        {/* Card Container */}
-        <Grid container spacing={3}>
-          {/* Trustpilot Card */}
-          <Grid item xs={12} sm={6} md={3}>
-            <Card
-              sx={{
-                height: "100%",
-                background: theme.palette.background["200"],
-                color: "white",
-                borderRadius: 3,
-                overflow: "hidden",
-                height: "fit-content",
-              }}
+      {/* Instant Pricing Section */}
+      <Box sx={{ backgroundColor: theme.palette.background["200"], py: 6 }}>
+        <Container maxWidth="lg">
+          <Stack spacing={4} alignItems="center">
+            <Typography 
+              variant="h4" 
+              fontWeight="bold" 
+              textAlign="center"
+              sx={{ color: "white", mb: 2 }}
             >
-              <CardContent
-                sx={{
-                  p: 3,
-                  height: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 2,
-                }}
-              >
-                <Typography variant="h5" sx={{ fontWeight: "bold", mb: 2 }}>
-                  We're Rated Great on Trustpilot
-                </Typography>
-                <Typography variant="body1" sx={{ height: "6rem" }}>
-                  Based on over 150,000 independent and verified reviews.
-                </Typography>
-                <Box sx={{ mt: 2 }}>
-                  <Image
-                    src={Star}
-                    alt="star"
-                    width={250}
-                    height={250}
-                    style={{ objectFit: "contain" }}
-                  />
-                </Box>
-              </CardContent>
-            </Card>
-          </Grid>
-
-          {/* TikTok Card */}
-          <Grid item xs={12} sm={6} md={3}>
-            <Card
-              sx={{
-                height: "100%",
-                backgroundColor: "white",
-                borderRadius: 3,
-                border: "1px solid #e0e0e0",
-                height: "fit-content",
-              }}
+              Get Your Price in 30 Seconds
+            </Typography>
+            <Typography 
+              variant="h6" 
+              textAlign="center"
+              sx={{ color: "white", opacity: 0.9, maxWidth: "600px" }}
             >
-              <CardContent
-                sx={{
-                  p: 3,
-                  height: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 2,
-                }}
-              >
-                <Typography variant="h5" sx={{ fontWeight: "bold", mb: 2 }}>
-                  TikTok's New 50p Shipping Fee Explained
-                </Typography>
-                <Typography variant="body1" sx={{ mb: 3 }}>
-                  Learn about TikTok's new shipping fee and how Smart Send keeps
-                  your postage costs low.
-                </Typography>
-                <Box sx={{ mt: 2 }}>
-                  <Image
-                    src={TikTok}
-                    alt="star"
-                    width={250}
-                    height={250}
-                    style={{ objectFit: "contain" }}
-                  />
-                </Box>
-                {/* <Button
-                    variant="text"
-                    sx={{
-                      color: '#4A90E2',
-                      textTransform: 'none',
-                      fontWeight: 'bold',
-                      justifyContent: 'flex-start',
-                      pl: 0
-                    }}
-                  >
-                    Read More →
-                  </Button> */}
-              </CardContent>
-            </Card>
-          </Grid>
+              Smart comparison technology finds the best delivery deals instantly
+            </Typography>
 
-          {/* USA Shipping Card */}
-          <Grid item xs={12} sm={6} md={3}>
-            <Card
-              sx={{
-                height: "100%",
-                backgroundColor: "white",
-                borderRadius: 3,
-                border: "1px solid #e0e0e0",
-                height: "fit-content",
-              }}
-            >
-              <CardContent
-                sx={{
-                  p: 3,
-                  height: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 2,
-                }}
-              >
-                <Typography variant="h5" sx={{ fontWeight: "bold", mb: 2 }}>
-                  Integrate With Smart Send
-                </Typography>
-                <Typography variant="body1" sx={{ mb: 3 }}>
-                  Link your sales channels with our free shipping management
-                  tool to ship all your orders from one place.
-                </Typography>
-                <Box sx={{ mt: 2 }}>
-                  <Image
-                    src={SmartSend2}
-                    alt="star"
-                    width={250}
-                    height={250}
-                    style={{ objectFit: "contain" }}
-                  />
-                </Box>
-                {/* <Button
-                    variant="text"
-                    sx={{
-                      color: '#4A90E2',
-                      textTransform: 'none',
-                      fontWeight: 'bold',
-                      justifyContent: 'flex-start',
-                      pl: 0
-                    }}
-                  >
-                    Get a Quote →
-                  </Button> */}
-              </CardContent>
-            </Card>
-          </Grid>
-
-          {/* Sign In Card */}
-          <Grid item xs={12} sm={6} md={3}>
-            <Card
-              sx={{
-                height: "100%",
-                backgroundColor: "white",
-                borderRadius: 3,
-                border: "1px solid #e0e0e0",
-                height: "fit-content",
-              }}
-            >
-              <CardContent
-                sx={{
-                  p: 3,
-                  height: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 2,
-                }}
-              >
-                <Typography variant="h5" sx={{ fontWeight: "bold", mb: 2 }}>
-                  Open a Business Account
-                </Typography>
-                <Typography variant="body1" sx={{ mb: 3 }}>
-                  Save up to 42% on collection services When you sign up for a
-                  ParcelGo Business Account
-                </Typography>
-                <Box sx={{ mt: 2 }}>
-                  <Image
-                    src={BussinessAccount}
-                    alt="star"
-                    width={250}
-                    height={250}
-                    style={{ objectFit: "contain" }}
-                  />
-                </Box>
-                {/* <Button
-                    variant="text"
-                    sx={{
-                      color: '#4A90E2',
-                      textTransform: 'none',
-                      fontWeight: 'bold',
-                      justifyContent: 'flex-start',
-                      pl: 0
-                    }}
-                  >
-                    Go to Sign In →
-                  </Button> */}
-              </CardContent>
-            </Card>
-          </Grid>
-        </Grid>
-      </Container>
-
-      {/* Comapare Couriers */}
-      <Container maxWidth={"lg"}>
-        <Stack spacing={6} py={8}>
-          <Typography variant="h4" fontWeight={"bold"} textAlign={"center"}>
-            Compare Couriers
-          </Typography>
-
-          <TableContainer
-            spanTd={tableHeaders.length}
-            isLoading={false}
-            isContent={courierRows.length}
-            thContent={tableHeaders.map((label, i) => (
-              <TableCell key={i}>
-                <Typography
-                  variant="h6"
-                  color="text.primary"
-                  fontWeight={"bold"}
+            <Grid container spacing={3} sx={{ mt: 2 }}>
+              <Grid item xs={12} md={6}>
+                <Paper 
+                  elevation={0}
+                  sx={{ 
+                    p: 4, 
+                    borderRadius: 3, 
+                    backgroundColor: "white",
+                    height: "100%",
+                    border: "1px solid rgba(255,255,255,0.1)"
+                  }}
                 >
-                  {label}
-                </Typography>
-              </TableCell>
-            ))}
-          >
-            {courierRows?.map((item, i) => {
-              return <Fragment key={i + 1}>{renderRow(item, i)}</Fragment>;
-            })}
-          </TableContainer>
-        </Stack>
-        {/* <CompareCouriers /> */}
-      </Container>
+                  <Stack spacing={2} alignItems="center">
+                    <CheckCircleIcon sx={{ fontSize: 40, color: "success.main" }} />
+                    <Typography variant="h6" fontWeight="bold" textAlign="center">
+                      Instant Price Matching
+                    </Typography>
+                    <Typography variant="body1" textAlign="center" color="text.secondary">
+                      Real-time rates from 15+ carriers. Compare options side-by-side without the runaround.
+                    </Typography>
+                  </Stack>
+                </Paper>
+              </Grid>
 
-      {/* Business Account Section */}
-      <Container maxWidth="lg" sx={{ py: 8 }}>
-        <Grid
-          container
-          sx={{
-            borderRadius: 4,
-            overflow: "hidden",
-            boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
-            backgroundColor: "#2E5B8A",
-            color: "white",
-            minHeight: 400,
-          }}
-        >
-          {/* Text Content */}
-          <Grid item xs={12} md={7}>
-            <Box
-              sx={{
-                p: { xs: 4, md: 6 },
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-              }}
+              <Grid item xs={12} md={6}>
+                <Paper 
+                  elevation={0}
+                  sx={{ 
+                    p: 4, 
+                    borderRadius: 3, 
+                    backgroundColor: "white",
+                    height: "100%",
+                    border: "1px solid rgba(255,255,255,0.1)"
+                  }}
+                >
+                  <Stack spacing={2} alignItems="center">
+                    <SecurityIcon sx={{ fontSize: 40, color: "primary.main" }} />
+                    <Typography variant="h6" fontWeight="bold" textAlign="center">
+                      Zero Hidden Costs
+                    </Typography>
+                    <Typography variant="body1" textAlign="center" color="text.secondary">
+                      What you see is exactly what you pay. No surprise fees or inflated "handling charges".
+                    </Typography>
+                  </Stack>
+                </Paper>
+              </Grid>
+
+              <Grid item xs={12} md={6}>
+                <Paper 
+                  elevation={0}
+                  sx={{ 
+                    p: 4, 
+                    borderRadius: 3, 
+                    backgroundColor: "white",
+                    height: "100%",
+                    border: "1px solid rgba(255,255,255,0.1)"
+                  }}
+                >
+                  <Stack spacing={2} alignItems="center">
+                    <SpeedIcon sx={{ fontSize: 40, color: "warning.main" }} />
+                    <Typography variant="h6" fontWeight="bold" textAlign="center">
+                      Live Delivery Windows
+                    </Typography>
+                    <Typography variant="body1" textAlign="center" color="text.secondary">
+                      Actual pickup and delivery times. Not vague estimates that leave you guessing.
+                    </Typography>
+                  </Stack>
+                </Paper>
+              </Grid>
+
+              <Grid item xs={12} md={6}>
+                <Paper 
+                  elevation={0}
+                  sx={{ 
+                    p: 4, 
+                    borderRadius: 3, 
+                    backgroundColor: "white",
+                    height: "100%",
+                    border: "1px solid rgba(255,255,255,0.1)"
+                  }}
+                >
+                  <Stack spacing={2} alignItems="center">
+                    <TrendingUpIcon sx={{ fontSize: 40, color: "success.main" }} />
+                    <Typography variant="h6" fontWeight="bold" textAlign="center">
+                      Smart Route Optimization
+                    </Typography>
+                    <Typography variant="body1" textAlign="center" color="text.secondary">
+                      Our system finds the fastest path to your destination. Better routes mean better prices.
+                    </Typography>
+                  </Stack>
+                </Paper>
+              </Grid>
+            </Grid>
+
+            <Typography 
+              variant="body2" 
+              textAlign="center"
+              sx={{ color: "white", opacity: 0.8, mt: 4, fontStyle: "italic" }}
             >
-              {/* Main Heading */}
-              <Typography
-                variant="h4"
-                sx={{
-                  fontWeight: "bold",
-                  mb: 3,
-                  lineHeight: 1.2,
-                  fontSize: { xs: "1.8rem", md: "2.2rem" },
-                }}
-              >
-                Save up to 42% with a Business Account
-              </Typography>
+              Enter your details above and see why thousands choose our instant quotes over slow traditional brokers
+            </Typography>
+          </Stack>
+        </Container>
+      </Box>
 
-              {/* Description */}
-              <Typography
-                variant="body1"
-                sx={{
-                  mb: 4,
-                  lineHeight: 1.6,
-                  fontSize: { xs: "1rem", md: "1.1rem" },
-                  opacity: 0.9,
-                }}
-              >
-                If you regularly send over 25 parcels a week, you could save up
-                to 42% on collection services when you open a ParcelGo Business
-                Account. We currently offer business accounts with Parcelforce,
-                DPD and Evri to bring you the cheapest postage costs.
-              </Typography>
+      {/* Trust & Features Section */}
+     <Container maxWidth="xl" sx={{ py: 8 }}>
+  <Grid container spacing={4}>
+    {/* Trusted by Users */}
+    <Grid item xs={12} sm={6} lg={3}>
+      <Card
+        sx={{
+          height: "100%",
+          background: theme.palette.background["200"],
+          color: "white",
+          borderRadius: 3,
+          overflow: "hidden",
+          transition: "transform 0.2s ease, box-shadow 0.2s ease",
+          "&:hover": {
+            transform: "translateY(-4px)",
+            boxShadow: "0 8px 24px rgba(0,0,0,0.15)",
+          },
+        }}
+      >
+        <CardContent sx={{ p: 4, textAlign: "center" }}>
+          <Typography variant="h5" sx={{ fontWeight: "bold", mb: 2 }}>
+            Trusted by 150,000+ Shippers
+          </Typography>
+          <Typography variant="body1" sx={{ mb: 3, opacity: 0.9 }}>
+            Real customers use Parcel Go to compare prices and book shipments with confidence—no hidden fees, no surprises at checkout.
+          </Typography>
+          <Box sx={{ mt: 2 }}>
+            <Image src={Star} alt="5 star rating" width={200} height={40} style={{ objectFit: "contain" }} />
+          </Box>
+          <Chip
+            label="Rated 4.8/5 by Verified Users"
+            sx={{ mt: 2, backgroundColor: "rgba(255,255,255,0.2)", color: "white", fontWeight: "bold" }}
+          />
+        </CardContent>
+      </Card>
+    </Grid>
 
-              {/* Features List */}
-              <Stack spacing={2} sx={{ mb: 4 }}>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                  <Box
-                    sx={{
-                      width: 8,
-                      height: 8,
-                      borderRadius: "50%",
-                      backgroundColor: "white",
-                      flexShrink: 0,
-                    }}
-                  />
-                  <Typography
-                    variant="body1"
-                    sx={{ fontSize: { xs: "0.95rem", md: "1rem" } }}
-                  >
-                    Discounted rates that are automatically applied to your
-                    account
-                  </Typography>
-                </Box>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                  <Box
-                    sx={{
-                      width: 8,
-                      height: 8,
-                      borderRadius: "50%",
-                      backgroundColor: "white",
-                      flexShrink: 0,
-                    }}
-                  />
-                  <Typography
-                    variant="body1"
-                    sx={{ fontSize: { xs: "0.95rem", md: "1rem" } }}
-                  >
-                    1-2 hour collection windows at a time that works for you
-                  </Typography>
-                </Box>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                  <Box
-                    sx={{
-                      width: 8,
-                      height: 8,
-                      borderRadius: "50%",
-                      backgroundColor: "white",
-                      flexShrink: 0,
-                    }}
-                  />
-                  <Typography
-                    variant="body1"
-                    sx={{ fontSize: { xs: "0.95rem", md: "1rem" } }}
-                  >
-                    A dedicated ParcelGo account manager and phone number
-                  </Typography>
-                </Box>
-              </Stack>
+    {/* Instant Quote */}
+    <Grid item xs={12} sm={6} lg={3}>
+      <Card
+        sx={{
+          height: "100%",
+          backgroundColor: "white",
+          borderRadius: 3,
+          border: "1px solid #e0e0e0",
+          transition: "transform 0.2s ease, box-shadow 0.2s ease",
+          "&:hover": {
+            transform: "translateY(-4px)",
+            boxShadow: "0 8px 24px rgba(0,0,0,0.15)",
+          },
+        }}
+      >
+        <CardContent sx={{ p: 4, textAlign: "center" }}>
+          <Typography variant="h5" sx={{ fontWeight: "bold", mb: 2, color: "primary.main" }}>
+            Instant, Accurate Quotes
+          </Typography>
+          <Typography variant="body1" sx={{ mb: 3, color: "text.secondary" }}>
+            Our pricing engine compares carriers and routes in real time to show you the best available shipping rates—instantly.
+          </Typography>
+          <Box sx={{ mt: 2 }}>
+            <Image src={TikTok} alt="Smart pricing technology" width={200} height={120} style={{ objectFit: "contain" }} />
+          </Box>
+          <Chip label="Save up to 40% per Shipment" color="primary" sx={{ mt: 2, fontWeight: "bold" }} />
+        </CardContent>
+      </Card>
+    </Grid>
 
-              {/* CTA Button */}
-              <Button
-                variant="contained"
-                size="large"
-                sx={{
-                  backgroundColor: "white",
-                  color: "#2E5B8A",
-                  fontWeight: "bold",
-                  textTransform: "none",
-                  borderRadius: 2,
-                  px: 4,
-                  py: 1.5,
-                  fontSize: "1.1rem",
-                  alignSelf: "flex-start",
-                  "&:hover": {
-                    backgroundColor: "rgba(255, 255, 255, 0.9)",
-                  },
-                }}
-                endIcon={
-                  <Box
-                    component="span"
-                    sx={{
-                      display: "inline-block",
-                      ml: 1,
-                      fontSize: "1.2rem",
-                    }}
-                  >
-                    →
-                  </Box>
-                }
-              >
-                Open an Account
-              </Button>
-            </Box>
-          </Grid>
+    {/* Quote → Book Flow */}
+    <Grid item xs={12} sm={6} lg={3}>
+      <Card
+        sx={{
+          height: "100%",
+          backgroundColor: "white",
+          borderRadius: 3,
+          border: "1px solid #e0e0e0",
+          transition: "transform 0.2s ease, box-shadow 0.2s ease",
+          "&:hover": {
+            transform: "translateY(-4px)",
+            boxShadow: "0 8px 24px rgba(0,0,0,0.15)",
+          },
+        }}
+      >
+        <CardContent sx={{ p: 4, textAlign: "center" }}>
+          <Typography variant="h5" sx={{ fontWeight: "bold", mb: 2, color: "success.main" }}>
+            Quote → Book in Minutes
+          </Typography>
+          <Typography variant="body1" sx={{ mb: 3, color: "text.secondary" }}>
+            Get your quote, choose a carrier, and book your shipment in just a few clicks. No manual follow-ups required.
+          </Typography>
+          <Box sx={{ mt: 2 }}>
+            <Image src={SmartSend2} alt="Quick booking" width={200} height={120} style={{ objectFit: "contain" }} />
+          </Box>
+          <Chip label="No Account Needed" color="success" sx={{ mt: 2, fontWeight: "bold" }} />
+        </CardContent>
+      </Card>
+    </Grid>
 
-          {/* Image Section */}
-          <Grid item xs={12} md={5}>
-            <Box
-              sx={{
-                height: { xs: 300, md: "100%" },
-                position: "relative",
-                minHeight: 400,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                p: { xs: 2, md: 4 },
-              }}
-            >
-              <Image
-                src={Coins}
-                alt="Business savings with coins"
-                style={{
-                  objectFit: "contain",
-                  width: "100%",
-                  height: "100%",
-                  maxWidth: 400,
-                }}
-              />
-            </Box>
-          </Grid>
-        </Grid>
-      </Container>
+    {/* Business Account */}
+    <Grid item xs={12} sm={6} lg={3}>
+      <Card
+        sx={{
+          height: "100%",
+          backgroundColor: "white",
+          borderRadius: 3,
+          border: "1px solid #e0e0e0",
+          transition: "transform 0.2s ease, box-shadow 0.2s ease",
+          "&:hover": {
+            transform: "translateY(-4px)",
+            boxShadow: "0 8px 24px rgba(0,0,0,0.15)",
+          },
+        }}
+      >
+        <CardContent sx={{ p: 4, textAlign: "center" }}>
+          <Typography variant="h5" sx={{ fontWeight: "bold", mb: 2, color: "warning.main" }}>
+            Shipping More? Pay Less
+          </Typography>
+          <Typography variant="body1" sx={{ mb: 3, color: "text.secondary" }}>
+            High-volume shippers get access to discounted rates, consolidated billing, and priority support.
+          </Typography>
+          <Box sx={{ mt: 2 }}>
+            <Image src={BussinessAccount} alt="Business account benefits" width={200} height={120} style={{ objectFit: "contain" }} />
+          </Box>
+          <Chip
+            label="Up to 42% Lower Rates"
+            sx={{ mt: 2, backgroundColor: "warning.main", color: "white", fontWeight: "bold" }}
+          />
+        </CardContent>
+      </Card>
+    </Grid>
+  </Grid>
+</Container>
 
-      {/* Smart Send Section */}
-      <Container maxWidth="lg" sx={{ py: 8 }}>
-        <Grid
-          container
-          sx={{
-            borderRadius: 4,
-            overflow: "hidden",
-            boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
-            backgroundColor: "#2E5B8A",
-            color: "white",
-            minHeight: 400,
-          }}
-        >
-          {/* Text Content */}
-          <Grid item xs={12} md={7}>
-            <Box
-              sx={{
-                p: { xs: 4, md: 6 },
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-              }}
-            >
-              {/* Main Heading */}
-              <Typography
-                variant="h4"
-                sx={{
-                  fontWeight: "bold",
-                  mb: 3,
-                  lineHeight: 1.2,
-                  fontSize: { xs: "1.8rem", md: "2.2rem" },
-                }}
-              >
-                Free Shipping Software for a Growing Business
-              </Typography>
 
-              {/* Description */}
-              <Typography
-                variant="body1"
-                sx={{
-                  mb: 3,
-                  lineHeight: 1.6,
-                  fontSize: { xs: "1rem", md: "1.1rem" },
-                  opacity: 0.9,
-                }}
-              >
-                If you send parcels from different marketplaces,{" "}
-                <Box component="span" sx={{ fontWeight: "bold" }}>
-                  Smart Send
-                </Box>{" "}
-                can save you bags of time. Using our free shipping management
-                tool will secure you the cheapest shipping prices with eBay,
-                Amazon and more! Use Smart Send to:
-              </Typography>
-
-              {/* Features List */}
-              <Stack spacing={2} sx={{ mb: 3 }}>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                  <Box
-                    sx={{
-                      width: 8,
-                      height: 8,
-                      borderRadius: "50%",
-                      backgroundColor: "white",
-                      flexShrink: 0,
-                    }}
-                  />
-                  <Typography
-                    variant="body1"
-                    sx={{ fontSize: { xs: "0.95rem", md: "1rem" } }}
-                  >
-                    Manage shipping from multiple sales channels all from one
-                    place
-                  </Typography>
-                </Box>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                  <Box
-                    sx={{
-                      width: 8,
-                      height: 8,
-                      borderRadius: "50%",
-                      backgroundColor: "white",
-                      flexShrink: 0,
-                    }}
-                  />
-                  <Typography
-                    variant="body1"
-                    sx={{ fontSize: { xs: "0.95rem", md: "1rem" } }}
-                  >
-                    Set up rules to automate your shipping with Rule Manager
-                  </Typography>
-                </Box>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                  <Box
-                    sx={{
-                      width: 8,
-                      height: 8,
-                      borderRadius: "50%",
-                      backgroundColor: "white",
-                      flexShrink: 0,
-                    }}
-                  />
-                  <Typography
-                    variant="body1"
-                    sx={{ fontSize: { xs: "0.95rem", md: "1rem" } }}
-                  >
-                    Update customers in seconds with Auto Send
-                  </Typography>
-                </Box>
-              </Stack>
-
-              {/* Additional Info */}
-              <Typography
-                variant="body1"
-                sx={{
-                  mb: 4,
-                  lineHeight: 1.6,
-                  fontSize: { xs: "0.95rem", md: "1rem" },
-                  opacity: 0.9,
-                }}
-              >
-                You can even link your own website by applying for a
-                ParcelGo.com API key in your 'Linked Accounts'.
-              </Typography>
-
-              {/* CTA Button */}
-              <Button
-                variant="text"
-                size="large"
-                sx={{
-                  color: "white",
-                  fontWeight: "bold",
-                  textTransform: "none",
-                  fontSize: "1.1rem",
-                  alignSelf: "flex-start",
-                  px: 0,
-                  "&:hover": {
-                    backgroundColor: "rgba(255, 255, 255, 0.1)",
-                  },
-                }}
-                endIcon={
-                  <Box
-                    component="span"
-                    sx={{
-                      display: "inline-block",
-                      ml: 1,
-                      fontSize: "1.2rem",
-                    }}
-                  >
-                    →
-                  </Box>
-                }
-              >
-                Unlock Quicker Shipping
-              </Button>
-            </Box>
-          </Grid>
-
-          {/* Image Section */}
-          <Grid item xs={12} md={5}>
-            <Box
-              sx={{
-                height: { xs: 300, md: "100%" },
-                position: "relative",
-                minHeight: 400,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                p: { xs: 2, md: 4 },
-              }}
-            >
-              <Image
-                src={SmartSend}
-                alt="Smart Send shipping management software"
-                style={{
-                  objectFit: "contain",
-                  width: "100%",
-                  height: "100%",
-                  maxWidth: 400,
-                }}
-              />
-            </Box>
-          </Grid>
-        </Grid>
-      </Container>
       {/* Faqs Section */}
       <Stack mb={8}>
         <Faqs faqa={faqsQuickQuote} />
