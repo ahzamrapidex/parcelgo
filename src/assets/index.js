@@ -11,6 +11,8 @@ import TikTok from "./images/SmartSend_graphicmobile_.webp";
 import Star from "./images/star.webp";
 import USA from "./images/America.webp";
 import SignIn from "./images/Trust.webp";
+import Tracking1 from "./images/tracking-1.png";
+import Tracking2 from "./images/tracking-2.png";
 import Parcel from "./images/woman_on_telephone.webp";
 import World from "./images/tracking_graphic.webp";
 import Delivery from "./images/fast_delivery_graphic.webp";
@@ -139,6 +141,8 @@ export {
   AboutParcelForce,
   SaveOn,
   DHLVan,
+  Tracking1,
+  Tracking2,
   DYDynamo,
   Skynet2,
   WhyParcelForce,

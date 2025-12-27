@@ -14,7 +14,7 @@ import {
 } from "@mui/material";
 import DynamicBanner from "@/shared/components/banner/dynamic-banner";
 import UIButton from "@/shared/pure-components/button/button";
-import { World, Delivery, Robot1 } from "@/assets";
+import { World, Delivery, Robot1, Tracking1, Tracking2 } from "@/assets";
 import Image from "next/image";
 import ConstructionIcon from '@mui/icons-material/Construction';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
@@ -65,8 +65,8 @@ const TrackParcel = () => {
     <>
       {/* Banner Section */}
       <DynamicBanner
-        image1={<Image src={World} alt="Global tracking network" width={350} height={"auto"} />}
-        image2={<Image src={Delivery} alt="Fast delivery tracking" width={350} height={"auto"} />}
+        image1={<Image src={Tracking1} alt="Global tracking network" width={350} height={"auto"} />}
+        image2={<Image src={Tracking2} alt="Fast delivery tracking" width={500} height={"auto"} />}
         isCalculator={false}
       >
         <Typography variant="h3" fontWeight={"bold"} textAlign={"center"}>
