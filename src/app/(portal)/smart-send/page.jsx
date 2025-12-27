@@ -707,7 +707,6 @@ const SmartSend = () => {
             </Grid>
           </Paper>
 
-          {/* Link your sales channels section */}
           <Paper
             elevation={0}
             sx={{
@@ -920,9 +919,194 @@ const SmartSend = () => {
                 </Box>
               </Grid>
 
-              {/* Continue with remaining platform logos... */}
-              {/* I'll include a few more for brevity, but you should add all the rest */}
-              
+              {/* Row 2 */}
+              <Grid item xs={6} sm={4} md={2}>
+                <Box
+                  sx={{
+                    backgroundColor: "white",
+                    borderRadius: 2,
+                    border: "1px solid #E0E0E0",
+                    p: 2,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    height: 80,
+                    cursor: "pointer",
+                    transition: "all 0.2s ease-in-out",
+                    "&:hover": {
+                      boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+                      transform: "translateY(-2px)",
+                    },
+                  }}
+                >
+                  <Image
+                    src={Km}
+                    alt="EKM"
+                    style={{
+                      maxWidth: "100%",
+                      maxHeight: "100%",
+                      objectFit: "contain",
+                    }}
+                  />
+                </Box>
+              </Grid>
+
+              <Grid item xs={6} sm={4} md={2}>
+                <Box
+                  sx={{
+                    backgroundColor: "white",
+                    borderRadius: 2,
+                    border: "1px solid #E0E0E0",
+                    p: 2,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    height: 80,
+                    cursor: "pointer",
+                    transition: "all 0.2s ease-in-out",
+                    "&:hover": {
+                      boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+                      transform: "translateY(-2px)",
+                    },
+                  }}
+                >
+                  <Image
+                    src={Wix}
+                    alt="Wix"
+                    style={{
+                      maxWidth: "100%",
+                      maxHeight: "100%",
+                      objectFit: "contain",
+                    }}
+                  />
+                </Box>
+              </Grid>
+
+              <Grid item xs={6} sm={4} md={2}>
+                <Box
+                  sx={{
+                    backgroundColor: "white",
+                    borderRadius: 2,
+                    border: "1px solid #E0E0E0",
+                    p: 2,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    height: 80,
+                    cursor: "pointer",
+                    transition: "all 0.2s ease-in-out",
+                    "&:hover": {
+                      boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+                      transform: "translateY(-2px)",
+                    },
+                  }}
+                >
+                  <Image
+                    src={Magento}
+                    alt="Magento"
+                    style={{
+                      maxWidth: "100%",
+                      maxHeight: "100%",
+                      objectFit: "contain",
+                    }}
+                  />
+                </Box>
+              </Grid>
+
+              <Grid item xs={6} sm={4} md={2}>
+                <Box
+                  sx={{
+                    backgroundColor: "white",
+                    borderRadius: 2,
+                    border: "1px solid #E0E0E0",
+                    p: 2,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    height: 80,
+                    cursor: "pointer",
+                    transition: "all 0.2s ease-in-out",
+                    "&:hover": {
+                      boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+                      transform: "translateY(-2px)",
+                    },
+                  }}
+                >
+                  <Image
+                    src={BigCommerce}
+                    alt="BigCommerce"
+                    style={{
+                      maxWidth: "100%",
+                      maxHeight: "100%",
+                      objectFit: "contain",
+                    }}
+                  />
+                </Box>
+              </Grid>
+
+              <Grid item xs={6} sm={4} md={2}>
+                <Box
+                  sx={{
+                    backgroundColor: "white",
+                    borderRadius: 2,
+                    border: "1px solid #E0E0E0",
+                    p: 2,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    height: 80,
+                    cursor: "pointer",
+                    transition: "all 0.2s ease-in-out",
+                    "&:hover": {
+                      boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+                      transform: "translateY(-2px)",
+                    },
+                  }}
+                >
+                  <Image
+                    src={SquareSpace}
+                    alt="Squarespace"
+                    style={{
+                      maxWidth: "100%",
+                      maxHeight: "100%",
+                      objectFit: "contain",
+                    }}
+                  />
+                </Box>
+              </Grid>
+
+              <Grid item xs={6} sm={4} md={2}>
+                <Box
+                  sx={{
+                    backgroundColor: "white",
+                    borderRadius: 2,
+                    border: "1px solid #E0E0E0",
+                    p: 2,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    height: 80,
+                    cursor: "pointer",
+                    transition: "all 0.2s ease-in-out",
+                    "&:hover": {
+                      boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+                      transform: "translateY(-2px)",
+                    },
+                  }}
+                >
+                  <Image
+                    src={PrestaShop}
+                    alt="PrestaShop"
+                    style={{
+                      maxWidth: "100%",
+                      maxHeight: "100%",
+                      objectFit: "contain",
+                    }}
+                  />
+                </Box>
+              </Grid>
+
+              {/* Row 3 */}
               <Grid item xs={6} sm={4} md={2}>
                 <Box
                   sx={{
@@ -954,8 +1138,130 @@ const SmartSend = () => {
                 </Box>
               </Grid>
 
-              {/* Add remaining platforms similarly... */}
+              <Grid item xs={6} sm={4} md={2}>
+                <Box
+                  sx={{
+                    backgroundColor: "white",
+                    borderRadius: 2,
+                    border: "1px solid #E0E0E0",
+                    p: 2,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    height: 80,
+                    cursor: "pointer",
+                    transition: "all 0.2s ease-in-out",
+                    "&:hover": {
+                      boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+                      transform: "translateY(-2px)",
+                    },
+                  }}
+                >
+                  <Image
+                    src={OnBuy}
+                    alt="OnBuy.com"
+                    style={{
+                      maxWidth: "100%",
+                      maxHeight: "100%",
+                      objectFit: "contain",
+                    }}
+                  />
+                </Box>
+              </Grid>
 
+              <Grid item xs={6} sm={4} md={2}>
+                <Box
+                  sx={{
+                    backgroundColor: "white",
+                    borderRadius: 2,
+                    border: "1px solid #E0E0E0",
+                    p: 2,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    height: 80,
+                    cursor: "pointer",
+                    transition: "all 0.2s ease-in-out",
+                    "&:hover": {
+                      boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+                      transform: "translateY(-2px)",
+                    },
+                  }}
+                >
+                  <Image
+                    src={BluePark}
+                    alt="Bluepark"
+                    style={{
+                      maxWidth: "100%",
+                      maxHeight: "100%",
+                      objectFit: "contain",
+                    }}
+                  />
+                </Box>
+              </Grid>
+
+              <Grid item xs={6} sm={4} md={2}>
+                <Box
+                  sx={{
+                    backgroundColor: "white",
+                    borderRadius: 2,
+                    border: "1px solid #E0E0E0",
+                    p: 2,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    height: 80,
+                    cursor: "pointer",
+                    transition: "all 0.2s ease-in-out",
+                    "&:hover": {
+                      boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+                      transform: "translateY(-2px)",
+                    },
+                  }}
+                >
+                  <Image
+                    src={ShopWiered}
+                    alt="Shopwired"
+                    style={{
+                      maxWidth: "100%",
+                      maxHeight: "100%",
+                      objectFit: "contain",
+                    }}
+                  />
+                </Box>
+              </Grid>
+
+              <Grid item xs={6} sm={4} md={2}>
+                <Box
+                  sx={{
+                    backgroundColor: "white",
+                    borderRadius: 2,
+                    border: "1px solid #E0E0E0",
+                    p: 2,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    height: 80,
+                    cursor: "pointer",
+                    transition: "all 0.2s ease-in-out",
+                    "&:hover": {
+                      boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+                      transform: "translateY(-2px)",
+                    },
+                  }}
+                >
+                  <Typography
+                    variant="h6"
+                    fontWeight="bold"
+                    sx={{
+                      color: "#10B981",
+                      textAlign: "center",
+                    }}
+                  >
+                    CSV
+                  </Typography>
+                </Box>
+              </Grid>
             </Grid>
           </Paper>
 
@@ -1036,8 +1342,373 @@ const SmartSend = () => {
                   </Box>
                 </Box>
 
-                {/* Add remaining features similarly... */}
+                {/* Feature 2 - Rule manager */}
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "flex-start",
+                    gap: 2,
+                    p: 3,
+                    border: "1px solid #E0E0E0",
+                    borderRadius: 2,
+                    backgroundColor: "white",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: 24,
+                      height: 24,
+                      backgroundColor: "#10B981",
+                      borderRadius: "50%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                      mt: 0.5,
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        color: "white",
+                        fontSize: "14px",
+                        fontWeight: "bold",
+                        color: "white",
+                      }}
+                    >
+                      ✓
+                    </Typography>
+                  </Box>
+                  <Box display={"flex"} flexDirection={"column"} gap={1}>
+                    <Typography variant="subtitle1" fontWeight="bold">
+                      Rule manager
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{ lineHeight: 1.6, color: "text.primary" }}
+                    >
+                      Automate your imported orders by creating rules like items
+                      sold on eBay should be shipped with Evri Postable, or
+                      products over 1kg should be sent with DPD.
+                    </Typography>
+                  </Box>
+                </Box>
 
+                {/* Feature 3 - Mark as dispatched */}
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "flex-start",
+                    gap: 2,
+                    p: 3,
+                    border: "1px solid #E0E0E0",
+                    borderRadius: 2,
+                    backgroundColor: "white",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: 24,
+                      height: 24,
+                      backgroundColor: "#10B981",
+                      borderRadius: "50%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                      mt: 0.5,
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        color: "white",
+                        fontSize: "14px",
+                        fontWeight: "bold",
+                        color: "white",
+                      }}
+                    >
+                      ✓
+                    </Typography>
+                  </Box>
+                  <Box display={"flex"} flexDirection={"column"} gap={1}>
+                    <Typography
+                      variant="subtitle1"
+                      fontWeight="bold"
+                      color="text.primary"
+                    >
+                      Mark as dispatched
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{ lineHeight: 1.6, color: "text.primary" }}
+                    >
+                      Send a tracking link to your marketplace in a single
+                      click.
+                    </Typography>
+                  </Box>
+                </Box>
+
+                {/* Feature 4 - Bulk label creation */}
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "flex-start",
+                    gap: 2,
+                    p: 3,
+                    border: "1px solid #E0E0E0",
+                    borderRadius: 2,
+                    backgroundColor: "white",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: 24,
+                      height: 24,
+                      backgroundColor: "#10B981",
+                      borderRadius: "50%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                      mt: 0.5,
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        fontSize: "14px",
+                        fontWeight: "bold",
+                        color: "white",
+                      }}
+                    >
+                      ✓
+                    </Typography>
+                  </Box>
+                  <Box display={"flex"} flexDirection={"column"} gap={1}>
+                    <Typography
+                      variant="subtitle1"
+                      fontWeight="bold"
+                      color="text.primary"
+                    >
+                      Bulk label creation
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{ lineHeight: 1.6, color: "text.primary" }}
+                    >
+                      Generate and print multiple labels at a time saving you
+                      hours of time and add SKU codes to labels.
+                    </Typography>
+                  </Box>
+                </Box>
+
+                {/* Feature 5 - Picking and packing assistance */}
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "flex-start",
+                    gap: 2,
+                    p: 3,
+                    border: "1px solid #E0E0E0",
+                    borderRadius: 2,
+                    backgroundColor: "white",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: 24,
+                      height: 24,
+                      backgroundColor: "#10B981",
+                      borderRadius: "50%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                      mt: 0.5,
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        fontSize: "14px",
+                        fontWeight: "bold",
+                        color: "white",
+                      }}
+                    >
+                      ✓
+                    </Typography>
+                  </Box>
+                  <Box display={"flex"} flexDirection={"column"} gap={1}>
+                    <Typography
+                      variant="subtitle1"
+                      fontWeight="bold"
+                      color="text.primary"
+                    >
+                      Picking and packing assistance
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{ lineHeight: 1.6, color: "text.primary" }}
+                    >
+                      Use picking and packing slips and SKU codes to sort and
+                      prioritise orders.
+                    </Typography>
+                  </Box>
+                </Box>
+
+                {/* Feature 6 - Returns management */}
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "flex-start",
+                    gap: 2,
+                    p: 3,
+                    border: "1px solid #E0E0E0",
+                    borderRadius: 2,
+                    backgroundColor: "white",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: 24,
+                      height: 24,
+                      backgroundColor: "#10B981",
+                      borderRadius: "50%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                      mt: 0.5,
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        color: "white",
+                        fontSize: "14px",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      ✓
+                    </Typography>
+                  </Box>
+                  <Box display={"flex"} flexDirection={"column"} gap={1}>
+                    <Typography
+                      variant="subtitle1"
+                      fontWeight="bold"
+                      sx={{ mb: 1 }}
+                    >
+                      Returns management
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{ lineHeight: 1.6, color: "text.primary" }}
+                    >
+                      Easily generate returns labels where needed.
+                    </Typography>
+                  </Box>
+                </Box>
+
+                {/* Feature 7 - Automated payments */}
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "flex-start",
+                    gap: 2,
+                    p: 3,
+                    border: "1px solid #E0E0E0",
+                    borderRadius: 2,
+                    backgroundColor: "white",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: 24,
+                      height: 24,
+                      backgroundColor: "#10B981",
+                      borderRadius: "50%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                      mt: 0.5,
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        color: "white",
+                        fontSize: "14px",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      ✓
+                    </Typography>
+                  </Box>
+                  <Box display={"flex"} flexDirection={"column"} gap={1}>
+                    <Typography
+                      variant="subtitle1"
+                      fontWeight="bold"
+                      sx={{ mb: 1 }}
+                    >
+                      Automated payments -
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{ lineHeight: 1.6, color: "text.primary" }}
+                    >
+                      Top up your account and enable auto top-up so funds never
+                      run low.
+                    </Typography>
+                  </Box>
+                </Box>
+
+                {/* Feature 8 - Invoice management */}
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "flex-start",
+                    gap: 2,
+                    p: 3,
+                    border: "1px solid #E0E0E0",
+                    borderRadius: 2,
+                    backgroundColor: "white",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: 24,
+                      height: 24,
+                      backgroundColor: "#10B981",
+                      borderRadius: "50%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                      mt: 0.5,
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        color: "white",
+                        fontSize: "14px",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      ✓
+                    </Typography>
+                  </Box>
+                  <Box>
+                    <Typography
+                      variant="subtitle1"
+                      fontWeight="bold"
+                      sx={{ mb: 1 }}
+                    >
+                      Invoice management
+                    </Typography>
+                    <Typography
+                      variant="body1"
+                      sx={{ lineHeight: 1.6, color: "text.primary" }}
+                    >
+                      Create custom invoices for your business records.
+                    </Typography>
+                  </Box>
+                </Box>
               </Stack>
             </Paper>
           </Stack>
@@ -1296,100 +1967,7 @@ const SmartSend = () => {
           </Paper>
 
           {/* Customer Reviews Section */}
-          <Paper
-            elevation={0}
-            sx={{
-              backgroundColor: "#374151",
-              borderRadius: 3,
-              border: `2px solid #4B5563`,
-              overflow: "hidden",
-              mx: "auto",
-              width: "100%",
-            }}
-          >
-            <Grid container spacing={0}>
-              {/* Left Column - Review Content */}
-              <Grid item xs={12} md={8}>
-                <Box
-                  sx={{
-                    backgroundColor: "#374151",
-                    height: "100%",
-                    p: { xs: 4, md: 6 },
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    color: "white",
-                  }}
-                >
-                  <Typography
-                    variant="h3"
-                    fontWeight="bold"
-                    sx={{
-                      mb: 3,
-                      color: "white",
-                      fontSize: { xs: "1.8rem", md: "2.2rem" },
-                      lineHeight: 1.2,
-                    }}
-                  >
-                    Over 100,000 5 star reviews
-                  </Typography>
-
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      fontSize: "1.1rem",
-                      lineHeight: 1.6,
-                      color: "white",
-                      mb: 2,
-                    }}
-                  >
-                    "The efficiency of ParcelGo has surpassed my expectations. I
-                    have sent over 50 parcels in the last month and have been
-                    kept up to date every step of the way from posting to
-                    delivery. I have to say they are a very impressive company
-                    to deal with and all parcels have been delivered promptly."
-                  </Typography>
-
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      fontSize: "1rem",
-                      color: "#D1D5DB",
-                      fontWeight: 500,
-                    }}
-                  >
-                    - Helen Rankin
-                  </Typography>
-                </Box>
-              </Grid>
-
-              {/* Right Column - Star Graphic */}
-              <Grid item xs={12} md={4}>
-                <Box
-                  sx={{
-                    backgroundColor: "#374151",
-                    height: "100%",
-                    minHeight: { xs: "200px", md: "300px" },
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    p: 4,
-                  }}
-                >
-                  <Image
-                    src={Star}
-                    alt="5 Star Rating - Customer satisfaction"
-                    style={{
-                      width: "100%",
-                      height: "auto",
-                      maxWidth: "200px",
-                      objectFit: "contain",
-                    }}
-                  />
-                </Box>
-              </Grid>
-            </Grid>
-          </Paper>
+          
         </Stack>
       </Container>
 
